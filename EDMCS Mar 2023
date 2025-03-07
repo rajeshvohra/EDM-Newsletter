@@ -1,0 +1,257 @@
+ 
+
+The newest update for Enterprise Data Management (EDM) has been released to test environments on Friday, March 3rd and it includes 18 exciting new features. This patch enhances the EDM experience for both end users and administrators/developers; and amplifies the scalability of the EDM platform. This will be available in production on March 17 th, 2023. 
+
+ 
+
+The EDM patch notes below will provide a detailed summary from Oracle and our team’s tips on each update (marked Huron POV) that will provide you with additional insights the true value of the feature in the real-world beyond what is available in Oracle documentation. 
+
+ 
+
+We classified all updates into 3 groups: 
+
+User Functionality Updates 
+
+Integration Updates 
+
+Administration Updates 
+
+ 
+
+Below are 4 updates from the 23.03 patch that are highlighted editors’ picks: 
+
+New User Interface 
+
+Run Viewpoint Extracts from Reports Page 
+
+Time Labeled Viewpoints 
+
+Sequence Properties 
+
+ 
+
+We recommend that your review all 23.03 EDM updates and if you have any questions on the features below or on your EDM implementation, please contact us at EDM_Huron@hcg.com. 
+
+ 
+
+ 
+
+Source:  
+
+ 
+
+EDM USER functionality UPDATES 
+
+ 
+
+User Interface Change                                                                        EDITOR’s PICK 
+
+Huron POV:  Although this is not captured in the patch notes, this patch is a big user interface change and changes the look and feel of EDM from the previous patches. Some of the key improvements with the user interface is especially around dropdown selection, where now with the color scheme and boxes, it is much easier to identify which fields are editable! 
+
+ 
+
+The new User Interface does come with a few niggling issues as well, the search functionality for Inserts and Moves might not work as expected (you might want to click on the search icon). 
+
+ 
+
+ADD SUBMITTERS OF ORIGINAL REQUESTS AS COLLABORATORS TO CONSOLIDATION REQUESTS 
+
+When requests are consolidated, the submitters of the original requests can be automatically added as collaborators to the consolidation request.  This option is available at the time of consolidating requests to enable the request owners to contribute to a consolidation request, track its progress, and reference its details.  The collaborators are notified about the consolidation request to take further action if necessary. 
+
+Business Benefit: Submitters of requests which are consolidated together need the ability to track the progress of their proposed changes, as well as make further edits, or add comments and attachments after consolidation. 
+
+Huron POV:  An enhancement to the Consolidation Requests, now the original submitters of the requests will be added as collaborators to enable the request owners to be part of the request consolidation process and enrich it if required. 
+
+KEY RESOURCES 
+
+Understanding Request Consolidation in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+COMPARE PROFILES FOR VIEWS  
+
+Saved compare profiles can be defined between viewpoints in views and run by any user of the view.  This allows for recurring comparisons to be done quickly by predefining the comparison parameters in a reusable profile.   Saved compares can also be filtered using a node expression to reduce the compare results to nodes with specific characteristics. 
+
+Business Benefit: Comparisons which are done repeatedly can be saved in a profile for easy use and shared with other users of a view. 
+
+Huron POV: A new feature for this patch, you can now create Compare profiles for views now provides more flexibility and enhancement to its already existing “Compare” feature as it allows the comparison between two viewpoints to be saved and being accessed by different users of the view from time to time. In addition, it also provides the ability to obtain filtered results using conditional statements. 
+
+ 
+
+You can now create Compare profiles for views now provides more flexibility and enhancement to its already existing “Compare” feature as it allows the comparison between two viewpoints to be saved and being accessed by different users of the view from time to time. In addition, it also provides the ability to obtain filtered results using conditional statements. The Compare profiles can be selected from the Compare option in the viewpoint and can be run manually by the users 
+
+KEY RESOURCES 
+
+Creating, Editing, and Deleting Compare Profiles in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+RUN VIEWPOINT EXTRACTS FROM REPORTS PAGE                                        EDITOR’s PICK 
+
+Viewpoint extracts for all views are available on the Reports page and can be easily run from there by users with at least Participant permission and Read data access to the viewpoint. 
+
+Business Benefit: Users who can browse viewpoint data may also want the ability to run extracts for those same viewpoints.  For example, a user of the Entity viewpoint also wants access to the results of an incremental extract for the Entity viewpoint. 
+
+Huron POV: One of the best features from this patch and a worthy entry to our Editor’s Pick. EDM users who are not Data Managers or Owners can now have the ability to run extracts for Reports which they to generate from EDM. This is a game changer as we can have the users run the reports which they need from EDM ad-hoc without needing any admins. Another Idea Lab from us converted into a feature!! 
+
+ 
+
+ 
+
+ 
+
+ 
+
+KEY RESOURCES 
+
+Viewpoint Extracts Report in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+TIME LABELS 
+
+Time labels enable you to create point-in-time snapshots of your data for comparison, reporting, and analysis purposes.  A time label can be setup as a Fixed date and time in the past or a Rolling period of time based on the calendar year.  Time labels are created at the view level to allow different groupings of enterprise data to share common time periods of interest.  Rolling time labels can represent the end of a prior month, quarter, or year. 
+
+Business Benefit: Organizations need access to previous versions of their enterprise data to understand how the data has changed over time and to satisfy governance and audit requirements. 
+
+Huron POV:  An important part of the Time Labeled Viewpoints is setting the Time Labels. You can have 2 types of Time Labels which a Data Manager/Owner can create, which is Fixed Time Labels and Rolling Time Labels. Fixed Time Labels are a specific point in time whereas the Rolling Time Labels will change every set period. 
+
+ 
+
+KEY RESOURCES 
+
+Creating, Editing, and Deleting Time Labels in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+TIME LABELED VIEWPOINTS                                                                       EDITOR’s PICK 
+
+Time labeled viewpoints can be used to access data in node sets as of a historical point in time.  Each time labeled viewpoint uses a single time label which can remain static or be changed on a routine basis.  Data in the time labeled viewpoint can be browsed, searched, and extracted as well as compared to other viewpoints in the view. 
+
+Business Benefit: Different data sets may require reference to different time periods in the past.  For example, Entity data may need to be compared to history on a quarterly basis while Cost Center users may want a snapshot of how the hierarchy was structured prior to a recent reorganization. 
+
+Huron POV: The Best feature from this patch, and clearly an Editors Pick. Time Labeled Viewpoint gives the users the ability to compare their Viewpoints to a previous point in time (which can be set via Time Labels). You have the ability to run compares and run extracts out of the Time Labeled Viewpoints making this an extremely powerful feature!! 
+
+ 
+
+KEY RESOURCES 
+
+Working with Time Labeled Viewpoints in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+WORKFLOW COLUMN SET FOR REQUEST ACTIVITY  
+
+Additional workflow information for requests can be displayed on the Requests page using the Select Column Set option.  The Workflow column set provides columns identifying the invitees, approvers, and committers of the requests displayed in request activity.  The All option displays all columns at the same time for larger screen sizes. 
+
+Business Benefit: Some users desire the ability to view the invitees, approvers, or committers for requests displayed in request activity to assess their progress and take further action if necessary. 
+
+Huron POV: The Requests page now has additional information in addition to the traditional general request information. Now with the Workflow Dropdown option, you can now see the Invitees, Approvals and Comments for the request at the main page itself! 
+
+ 
+
+  
+
+KEY RESOURCES 
+
+Working with Request Activity in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+ 
+
+EDM INTEGRATION UPDATES 
+
+EXCEL AND ZIP FILE SUPPORT FOR VIEWPOINT LOAD  
+
+Viewpoint loads support the use of XLSX and ZIP files as data sources in addition to the previously available CSV format.  In XLSX formats, data for each viewpoint is setup on a different worksheet.  In ZIP formats, data for each viewpoint is defined in a different text file in the compressed file. 
+
+Business Benefit: Viewpoint loads can be performed using several different source file formats to make it easier to load data into viewpoints.  For example, XLSX files created from a viewpoint download can be modified and immediately reloaded into a viewpoint.  Also, ZIP files created from a source viewpoint extract could be directly loaded into a target viewpoint. 
+
+Huron POV: This feature will give the administrator increased flexibility to load and make changes to viewpoints by introducing .xlsx and .zip file compatibility. This will likely improve processing times when making bulk updates and ensure data consistency by removing a potential data conversion step. 
+
+ 
+
+KEY RESOURCES 
+
+Viewpoint Load File Format in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+MERGE MODE FOR VIEWPOINT LOAD  
+
+A Merge mode is available for viewpoint loads to process incremental changes in the form of request items in a Load request.  This allows the changes from the viewpoint load to be validated, approved, committed, and recorded in transaction history.  Load requests are available in request activity and are accessible in expressions.  Viewpoint loads can be run in merge mode from the user interface or using the REST API. 
+
+Business Benefit: For recurring viewpoint loads, it is desirable to incrementally apply changes from the load source in a request form rather than just replacing the data in the viewpoint. 
+
+Huron POV: This feature is enhancement to viewpoint load which can be done via two methods – Merge and Replace. For processing incremental changes in the form of load request items in a viewpoint load, a merge mode is implemented. All the changes made by the load can be monitored in different workflow stages. This feature differs from merge import with the pre-defined options available which cannot be changed for the merge load.  
+
+ 
+
+KEY RESOURCES 
+
+Working with Viewpoint Loads in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+REST API TO ASSIGN REQUESTS  
+
+A REST API endpoint is available to assign an existing request in the Submit stage to a different user to allow them to take further action.  This API can be used by an automated process which creates Interactive requests or generates Import/Load requests which are not submitted. 
+
+Business Benefit:  Some integration processes need to conditionally assign requests to specific users in exceptional cases. 
+
+Huron POV: The new feature, 'REST API to Assign Requests', which offers a more automated and streamlined approach for assigning requests, makes it more efficient and reliable for users to specific users in certain cases. This feature is particularly helpful in integration processes where requests may need to be conditionally assigned. Using the REST API to assign requests to specific users reduces manual intervention and saves time. It also ensures that requests are assigned to the appropriate users, reducing the risk of errors, and improving accountability. Moreover, the REST API integration capability allows for seamless integration with external systems, which can enhance the overall data management solution. 
+
+ 
+
+KEY RESOURCES 
+
+Assign a Request to a User in REST API for Oracle Enterprise Data Management Cloud Service 
+
+ 
+
+RUN VIEWPOINT LOADS IN AN OPEN VIEW  
+
+A viewpoint load can be performed while browsing an open view as an alternative to initiating the load process from the Applications page.  This provides an efficient way to load data into a viewpoint when you are already browsing data for it in an open view.  You can immediately return to the viewpoint in the open view to see the results of the load operation.  A Load menu item is available in the viewpoint tab menu to perform the viewpoint load. 
+
+Business Benefit: Data managers need to efficiently load data into viewpoints from external files while already in the act of browsing the viewpoint data. 
+
+Huron POV: This feature is combination Request load and import. When one needs to load data solely to a certain viewpoint of Maintenance View without being constrained by request item limits (12000 items only), this feature is useful. As opposed to import, it can be used for any viewpoint or property, independent of the property's binding status. Also, not all bound properties are required in load file to load in that viewpoint. This feature is useful for unbound/partially bound viewpoint. This feature allows to load data into viewpoints using comma separated (CSV) or Excel files, as well as ZIP files containing CSV or Excel files. 
+
+ 
+
+KEY RESOURCES 
+
+Navigating Viewpoints in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+ 
+
+EDM Administration UPDATES 
+
+DOWNLOAD FILES FROM EXPORT AND EXTRACT HISTORY  
+
+Files created from previous exports and extracts are available for download from export and extract history in the user interface.  This provides users access to export and extract files from operations run in the past by them or another user.  Files to connections or the staging area are not included. 
+
+Business Benefit: In certain cases, it is helpful to access files created from past export or extract operations.  This may be necessary when operations are run from the user interface and the browser session ends, or to compare export/extract results to previous output files. 
+
+Huron POV:  This is a good feature which gives you the option to download a previously run export without need to run the export again. Especially if you need it for analysis or comparing previous exports. This will help keep the logging of Exports to only valid cases. 
+
+KEY RESOURCES 
+
+Exporting Dimensions in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+Running Extracts in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+EXTERNAL SYSTEM TYPE FOR UNIVERSAL APPLICATIONS  
+
+Universal applications can be configured with an External System Type to provide more details on the external system being supported.  This is useful in situations where a variety of different external business systems are being managed using the Universal application type.  Users can view and configure this information on the Applications page and in the Application inspector for universal applications. 
+
+Business Benefit: When several universal applications exist in an Enterprise Data Management environment, it is beneficial to provide more details regarding the external system type that is being managed by each universal application.  This information can be used to differentiate applications and eliminate any user confusion. 
+
+Huron POV: Universal Applications now have an extra field in the registration section, where you can tag what type of external system you are creating the External application for. This information is displayed on the Applications main page as well.  
+
+ 
+
+KEY RESOURCES 
+
+Registering a Universal Application in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
