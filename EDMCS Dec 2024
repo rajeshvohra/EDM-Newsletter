@@ -1,0 +1,371 @@
+ 
+
+	Enterprise Data Management Cloud (EDMCS) Dec 2024 Updates 
+
+The newest update for Enterprise Data Management (EDM) has been released to test environments on Friday, Dec 6th and it includes over 30 new features which makes it one of the biggest patches in recent history. This patch enhances the EDM experience for both end users and administrators/developers; and amplifies the scalability of the EDM platform. This was made available in production on Dec 20th, 2024. 
+
+The EDM patch notes below will provide a detailed summary from Oracle and our team’s tips on each update (marked Huron POV) that will provide you with additional insights the true value of the feature in the real-world beyond what is available in Oracle documentation.
+
+We classified all updates into 3 groups:
+1.	User Functionality Updates
+2.	Integration Updates
+3.	Administration Updates
+
+Below are 3 updates from the 24.12 patch that are highlighted editors’ picks:
+•	CHANGE MANAGEMENT DASHBOARD
+•	DYNAMIC ALLOWED VALUES FOR STRING PROPERTIES BASED ON NODE SET
+•	EXCEL OUTPUT FORMAT FOR EXTRACTS AND EXTRACT PACKAGES
+
+We recommend that your review all 24.12 EDM updates and if you have any questions on the features below or on your EDM implementation, please contact us at EDM_Huron@hcg.com.
+
+
+Source:  
+
+EDITOR’S PICKS
+CHANGE MANAGEMENT DASHBOARD
+The change management dashboard enables data steward users and auditors to analyze completed request changes in Enterprise Data Management. Users can visualize changes over time, across different applications and dimensions, and for different request actions, properties, and contributors. Data can be filtered by application and dimension, request action and type, property, contributor, and time frame. The following analyses are provided by the change management dashboard:
+•	Completed Changes Trend
+•	Request Change Activity
+•	Active Contributors
+•	Applications Changed
+•	Properties Changed
+Charts provide a drill down capability to view the associated transaction history records, as well as drill across to view the same set of changes for a different set of metrics. The associated transaction history records can be downloaded to a file for offline reference and sharing with other parties.
+Business Benefit: The change management dashboard provides valuable insights into how enterprise data is changing within an organization and allows users to analyze different perspectives and drill to transactional detail to perform additional research.
+Huron POV: The Change Management Dashboard is a great improvement to the analytics provided in EDM to your overall business process. This dashboard will give organizations improved insights into how their data changes over time, dimension change information, and also their key users making changes to data. This will be a great tool to supplement quarterly or yearly EDM process reviews.
+Key Resources
+•	Change Management Dashboard in Administering and Working with Oracle Enterprise Data Management Cloud
+DYNAMIC ALLOWED VALUES FOR STRING PROPERTIES BASED ON NODE SET 
+Allowed values for a string data type property can be based on nodes from an associated node set rather than explicitly defined for the property. The dynamic allowed values type can be configured for a string data type property for a specific application or node type in the property inspector. Additional options are available to control which values are taken from the node set including the applicable node types, the properties to use for the Value and Label of each allowed value, whether to only use bottom nodes, or to filter the nodes based on an expression. The allowed values list for the property is generated at runtime when selecting property values for nodes in a request or when validating property values.
+Business Benefit: String data type properties can leverage existing node sets to control the selection and validation of property values for nodes in viewpoints. It also enables multiple string properties to share a common data set from which their allowed values are based.
+Huron POV: This update simplifies providing users with a predefined list of selectable values for out-of-the-box string properties, such as the Default Movement property in an FCCS Account Dimension. With this update, users can use an allowed values list to directly update out-of-the-box properties, eliminating the need for a custom Node data type property as an intermediary.
+
+There are a couple of details regarding dynamic allowed values which should be noted. 
+1.	Unique Values Requirement:
+a.	The configured Value and Label properties must reference properties with unique values. Properties with duplicates will not appear in the lists of selectable properties for the Label or Value properties.
+b.	The Value and Label properties can reference the same property, such as Name or Alias.
+2.	Filtering Large Lists:
+a.	If the list of selectable values exceeds fifteen, Users will see a message prompting them to further filter the results and the drop-down list will filter the available values. The drop-down list will only display the first 15 allowed values in alphabetical order.
+ 
+b.	Any value meeting the configured filters' criteria will still be selectable, even if it doesn't immediately appear in the drop-down list. As users type a value, the drop-down list will further filter and show all selectable values that meet the typed criteria using a fuzzy search.
+ 
+c.	It is recommended that admins configure filters for these properties to provide users with the smallest possible list of selectable values.
+Key Resources
+•	Defining Allowed or Invalid Values for a Property in Administering and Working with Oracle Enterprise Data Management Cloud
+EXCEL OUTPUT FORMAT FOR EXTRACTS AND EXTRACT PACKAGES
+
+Extracts and extract packages can optionally produce files in an Excel spreadsheet format instead of plain text. The Extract File Type and Sheet Name parameters are available in the Extract inspector to configure an extract to output data in Excel file format and may be used by full, incremental, and generational extracts. When these extracts are included in an extract package and their output combined into a single file, the data from each extract can be written to a separate worksheet in the same Excel file. The extract package can reuse the same sheet name defined for each extract or you can specify a Package Sheet Name in the extract package.
+
+Business Benefit: Users can create custom reports and data files in Excel spreadsheet format using extracts. Extract packages can produce Excel files containing multiple worksheets with data from different Enterprise Data Management viewpoints.
+
+Huron POV: While this update is marked as an Integration Update, users will find this exceptionally beneficial as well. Extract reports were previously only able to be generated in “.txt” or “.csv” file format which meant that users would need to take additional steps to convert them to excel files if they wished to use them in excel. Now however, users will be able to generate extract reports directly as excel file types. 
+
+Key Resources
+•	Editing Extracts in Administering and Working with Oracle Enterprise Data Management Cloud
+Creating, Editing, Copying, and Deleting Extract Packages in Administering and Working with Oracle Enterprise Data Management Cloud
+
+
+EDM USER FUNCTIONALITY UPDATES
+DOWNLOAD VIEWPOINT COLUMN HEADERS ONLY TO FILE
+
+When downloading a viewpoint to a file, you have the option to download only column headers for the viewpoint rather than all nodes, property values, and relationships in the viewpoint. The resulting output file provides a template for loading data into the viewpoint from a file.
+
+Business Benefit: Users who need to load data into a viewpoint from an external file can easily download a template providing the appropriate file format.
+
+Huron POV: This is an excellent feature for users and data stewards that want to make changes to their data via an Excel and need a starting point for the file format. This will save time, reduce errors, and improve user experience.
+
+Key Resources
+•	Downloading a Viewpoint in Administering and Working with Oracle Enterprise Data Management Cloud
+ENHANCEMENTS TO TAX REPORTING APPLICATION TYPE
+
+The following enhancements have been made to the Tax Reporting application type:
+•	Allow Upper Level Entity Input property added to all dimensions
+•	ApplyWARRate and TAR Difference Reclassification properties added to the Account dimension
+•	TRCS_ prefix removed from the InterimForecast scenario and InterimForecast_RC property name and allowed value
+If custom attributes were previously used as a substitute for the Allow Upper Level Entity Input, ApplyWARRate, or TAR Difference Reclassification properties, the data from those custom attributes should be migrated to the new properties and the custom attributes should be removed from the Tax Reporting application. Any existing property values for the InterimForecast_RC property which do not match the revised allowed value will need to be updated.
+
+Business Benefit: Additional dimension member properties for Cloud EPM Tax Reporting applications can be managed in Enterprise Data Management without adding custom attributes.
+
+Huron POV: In addition to the new application adapter for Tax Reporting released recently, more enhancements have been added in this patch to handle some of the attributions which were handled using Custom properties. If you currently are using the Custom properties, our recommendation would be to copy the property values to the new attributes and remove the old custom properties to remove any confusion. The new enhancements will make the integrations to the TRCS application more seamless and has a more standard out of the box integration feel.
+
+Key Resources
+•	Registering Tax Reporting Applications in Administering and Working with Oracle Enterprise Data Management Cloud
+
+EXPAND ALL BELOW SELECTED NODE IN HIERARCHY VIEWPOINT
+
+Multiple levels of descendants below a selected node in a hierarchy viewpoint can be completely expanded in a single operation. An Expand All Below option is available to perform the expansion of descendants for a selected node in a hierarchy. A separate Collapse All Below option can be used to collapse all descendants for a selected node in the viewpoint.
+
+Business Benefit: Users browsing hierarchy viewpoints can quickly access all descendants of a node to view its structure or find particular nodes of interest.
+
+Huron POV: Business cases often arise where a quick expansion of a hierarchy is needed to navigate through multiple node levels. The new ‘Expand All Below’ feature is an exciting addition to EDM as it limits time spent manually clicking through a hierarchy.
+
+Key Resources
+•	Navigating Viewpoints in Administering and Working with Oracle Enterprise Data Management Cloud
+IMPROVED RESULTS AND SUMMARY WHEN MATCHING REQUEST ITEMS
+
+The following improvements have been made to the matching workbench:
+•	Ability to inspect the application, node type, and data source from the matching summary
+•	Combined match results for multiple matching rules for the same match candidate
+•	Matched properties for a specific match candidate highlighted in the match results
+•	Context sensitive help is now available via a User Assistance menu
+
+Business Benefit: Users can easily inspect and edit metadata objects used for matching and merging nodes in viewpoints to increase productivity. Combined match results and highlighted matched properties streamlines a user's review of match results and improves decision making.
+
+Huron POV: There are Property Transformations in Survivorship Rules and additional enhancements to the Matching Request item results and summary, which includes combining match results for multiple matching rules for the same match candidate. These enhancements are part of continuous improvements to the match and merge feature which has added a dimension to how EDM can be used to manage Master Data.
+
+Key Resources
+•	Understanding Match Results in Administering and Working with Oracle Enterprise Data Management Cloud
+INTEGRATION WITH ORACLE GUIDED LEARNING
+
+Enterprise Data Management users can access the Oracle Guided Learning console, a robust framework for developing personalized, guided, and contextual training and user onboarding experiences. This comprehensive toolset includes process guides, display groups, message guides, smart tips, and more. Service Administrators can configure system settings to enable Oracle Guided Learning within the Enterprise Data Management user interface.
+
+Business Benefit: By enabling users to create and activate guides within Enterprise Data Management, Oracle Guided Learning enhances task navigation, reduces errors, and improves productivity. This approach promotes standardized processes, enhances user experience, and lowers support costs, driving better business outcomes through streamlined operations and increased user proficiency.
+
+Huron POV: Having guided learning will assist both those developing in EDM and the Users post go-live have more support within the EDM application. Developers can create guides based on common issues they are seeing that users will have guidance on these when they are on their own.
+
+Key Resources
+•	Configuring System Settings in Administering and Working with Oracle Enterprise Data Management Cloud
+•	Integrating EPM Cloud and EDM Cloud with Oracle Guided Learning in Getting Started with Oracle EPM Cloud and EDM Cloud for Administrators
+MERGED ITEMS FILTER IN REQUEST DETAILS PANE
+
+A Merged Items filter is available in the request details pane to quickly view request items that resulted from a match and merge operation. The filter can be used to identify merged request items in order visualize their properties and relationships in a viewpoint. The Merged Items filter can be used while a request is in the Submit, Approve, or Commit stage.
+
+Business Benefit: Request users can easily identify request items which have been matched and merged without needing to inspect the request.
+
+Huron POV: More enhancements to the match and merge feature. If there are match and merge request items, you can filter on the request items to identify which request items were merged.
+
+ 
+
+Key Resources
+•	Working with Request Items in Administering and Working with Oracle Enterprise Data Management Cloud
+NODE CLIPBOARD IMPROVEMENTS
+
+The following improvements have been made to the node clipboard:
+•	Multiple nodes on the clipboard can be inserted or moved in a hierarchy viewpoint
+•	Remove All option was replaced with Remove Selected option to allow a subset of nodes to be removed from the clipboard
+
+Business Benefit: Large hierarchy viewpoints can be efficiently reorganized using the node clipboard. Nodes that have already been acted on can be removed from the clipboard to easily determine the remaining nodes which require further action.
+
+Huron POV: These improvements give users greater control over the Node Clipboard feature, enabling them to efficiently perform multiple actions, such as moves and inserts, on nodes. This simplification enhances hierarchy management for both users and data stewards.
+
+Key Resources
+•	Working with the Node Clipboard in Administering and Working with Oracle Enterprise Data Management Cloud
+NOTIFICATION POLICIES INCLUDE SUPPORT FOR CONSOLIDATED REQUESTS
+
+Notification policies now enable policy users to be notified when a request is consolidated into another request. The Notify on Status Change parameter on a notification policy can be configured in the Policy inspector to allow notification for consolidated requests. When a request is consolidated, an email is sent to the users of the policy to make them aware that the request items in that request were added to a different request. Notified users can navigate from the email to the request for more details.
+
+Business Benefit: Users who do not participate in the submission or approval of requests can be notified of requests that are consolidated into other requests to track the progress of the changes from those requests.
+
+Huron POV: In previous updates, notifications were sent for status changes on “Completed” and “In Flight” requests. Now, it has been extended to included “Consolidated” requests. These enhancements to notification policies ensure that users are informed when requests are consolidated, improving visibility into changes. This helps stakeholders who aren’t directly involved in submissions or approvals stay updated on progress and track changes effectively.
+
+Key Resources
+•	Creating and Enabling Notification Policies in Administering and Working with Oracle Enterprise Data Management Cloud
+PENDING SUBSCRIPTIONS LIST IN REQUEST LINEAGE
+
+A Pending Subscriptions list is available in the lineage of a source request to identify subscriptions which have not been processed yet. When the source request has many request items and several subscriptions to be processed, there may be a delay before one or more of those subscriptions is executed. Users can now determine whether any subscriptions are awaiting processing for a particular source request when viewing the request lineage in the Request inspector. A user can refresh the lineage to monitor the progress of pending subscriptions.
+
+Business Benefit: For source requests that have many request items and several subscriptions, users can identify the subscriptions that will be processed but have not completed as of yet.
+
+Huron POV: The Pending Subscriptions list allows users to identify unprocessed subscriptions within a source request’s lineage, enhancing visibility and tracking. This feature helps users monitor the progress of pending subscriptions, providing improved oversight in complex request workflows scenarios.
+
+Key Resources
+•	Viewing Request Lineage in Administering and Working with Oracle Enterprise Data Management Cloud
+REORDER PREDEFINED MEMBERS IN CLOUD EPM APPLICATIONS
+
+Predefined members in Oracle Cloud EPM applications can now be reordered under a parent in a hierarchy viewpoint. In previous releases, nodes with the Enterprise Predefined Member property = True could only be moved or have children added below it. The Predefined Member validation has been relaxed to allow nodes in an Cloud EPM application dimension to be reordered.
+
+Business Benefit: Users can reorder predefined members for Oracle Cloud EPM dimensions in Enterprise Data Management and synchronize those changes to the Cloud EPM applications using dimension import and export.
+
+Huron POV: In the latest update to the cloud-based Enterprise Performance Management (EPM) application, a significant improvement has been introduced: predefined nodes can now be reordered. This enhancement is designed to streamline the process of managing nodes, offering users greater flexibility and control. Previously, the arrangement of predefined nodes was dependent on its property, making it challenging to organize them in a customized order.
+This added complexity to the management process, requiring users to navigate around these dependencies. With the new functionality, users can now reorder nodes without being restricted by their inherent property. This simplification eliminates an additional step, making the entire process of managing nodes more efficient. As a result, users can now prioritize and arrange nodes according to their specific needs, ultimately improving the overall user experience and reducing potential errors in node management.
+
+This update reflects a continued commitment to enhancing the flexibility and usability of cloud EPM applications, empowering users with greater control over their data and system configurations.
+
+Key Resources
+•	Predefined Properties for Planning and FreeForm Applications in Administering and Working with Oracle Enterprise Data Management Cloud
+•	Predefined Properties for Financial Consolidation and Close Applications in Administering and Working with Oracle Enterprise Data Management Cloud
+•	Predefined Properties for Enterprise Profitability and Cost Management Applications in Administering and Working with Oracle Enterprise Data Management Cloud
+•	Predefined Properties for Tax Reporting Applications in Administering and Working with Oracle Enterprise Data Management Cloud
+REQUEST HISTORY IDENTIFIES WHEN REQUEST ITEMS ARE MERGED
+
+When request items are matched and merged into existing nodes in a viewpoint, the merge operation is recorded in request history to enable auditing of that activity at a later time. The request history entry identifies the number of request items that were merged for which node type, along with who performed the merge and when it occurred.
+
+Business Benefit: Users can easily determine when match and merge operations took place for request items in a request in case they want to investigate those items further.
+
+Huron POV: For completed matched and merged requests, users will have the audit trail to be able to see the process of how the nodes are identified and merged
+
+Key Resources
+•	Inspecting Requests in Administering and Working with Oracle Enterprise Data Management Cloud
+USER FAVORITES FOR QUICK ACCESS TO PERFORM RECURRING TASKS
+
+Users can declare specific viewpoints, viewpoint queries, request activity filters, and transaction history filters as favorites for easy access to perform repeated tasks. When a user is working with one of these objects, they can add it as a favorite for reuse at a later time. A Favorites menu is available in the global header at the top of the user interface to quickly access a favorite viewpoint, query, or filter. Favorites are specific to an individual user and can be renamed or deleted by them as necessary.
+
+Business Benefit: Users can quickly access frequently used viewpoints, viewpoint queries, saved request filters, and saved transaction filters with favorites.
+
+Huron POV:
+Favorites enable users to quickly access commonly used viewpoints, viewpoint queries, saved request filters, and transaction filters. This new feature will reduce the steps and makes navigation easy for EDM Users to pick the commonly used objects.
+
+Key Resources
+•	Working with Favorites in Administering and Working with Oracle Enterprise Data Management Cloud
+
+
+EDM INTEGRATION UPDATES
+
+EXTRACT PACKAGE OPTION TO OUTPUT INDIVIDUAL FILES TO GLOBAL CONNECTION
+
+An extract package which extracts data to a global connection can write individual extract files to the connection target rather than having the files bundled within a zip file. This capability prevents the need to unzip the extract files after writing them to the global connection. The Zip Package option can be disabled in the extract package to output individual files when extracting to a global connection.
+
+Business Benefit: An extract package consisting of many extracts can be run in a single operation and the data files produced by the package can be individually written to a global connection target such as Oracle Cloud ERP, Oracle Cloud EPM, or Oracle Object Storage.
+
+Huron POV: This will allow for more flexibility when designing extract packages depending on how the clients will need to receive the packages. The option to not have to unzip the package decrease the workload the team writing the integrations as it will be one less step in the process.
+
+Key Resources
+•	Creating, Editing, Copying, and Deleting Extract Packages in Administering and Working with Oracle Enterprise Data Management Cloud
+INCLUSIVE ANCESTORS OPTION FOR GENERATIONAL EXTRACTS
+
+Generational extracts provide the option to output the bottom nodes of each hierarchy branch in the Ancestor columns separately from the Node columns in the extract file format. The Inclusive Ancestors parameter can be configured for an extract to produce this type of output when necessary.
+
+Business Benefit: Generational extracts can produce results that include bottom node information in columns dedicated to specific levels of a hierarchy.
+
+Huron POV:  Enabling Inclusive Ancestors will include the node being extracted into the list of ancestor nodes used to populate the ancestor source type columns. For example, node 111 is being extracted and has Ancestors A, B and C. With Inclusive Ancestors unchecked the A, B and C nodes are used to populate the Ancestor Columns. With Inclusive Ancestors checked the A, B, C, and 111 nodes are used to populate the Ancestor Columns.
+
+ 
+
+Key Resources
+•	Specifying Generational Options in Administering and Working with Oracle Enterprise Data Management Cloud
+LOADDIMENSIONVIEWPOINT EPM AUTOMATE COMMAND
+
+The loadDimensionViewpoint EPM Automate command is now available. This command loads data from a data file into one unbound, bound, or partially bound viewpoint (a subset of nodes) of an Enterprise Data Management application using a defined load. The load file can be a Comma Separated Value (CSV) file, an Excel (XLSX) file, or a ZIP file containing one CSV or XLSX file.
+
+Business Benefit: This command allows you to use a custom load (as opposed to a default load) to load data into a viewpoint.
+
+Huron POV: The command for running the Load Dimension is 
+
+epmautomate loadDimensionViewpoint APPLICATION_NAME DIMENSION_NAME FILE_NAME LOAD_NAME [loadOption=ReplaceNodes|Merge] [purpose="PURPOSE"]
+
+The loadOption and Purpose are optional
+
+Key Resources
+•	loadDimensionViewpoint in Working with EPM Automate for Oracle Enterprise Performance Management Cloud
+
+REST API ENDPOINTS FOR POLICIES, SYSTEM SETTINGS, AND VALIDATE VIEWPOINT
+
+The Enterprise Data Management REST API provides new endpoints for the following operations:
+•	Get all policies and enable/disable a policy
+•	Get and update system settings
+•	Validate a viewpoint and write the results to a file
+
+Business Benefit: Workflow policies and system settings can be modified and viewpoints can be validated in an automated manner using the REST API.
+
+Huron POV: Clients may want to be able to complete these tasks in scheduled automated manner. Validating viewpoints in a scheduled job could help with making sure data in clean and following the business rules before they are sent to target systems.
+
+Key Resources
+•	Get all Policies in REST API for Oracle Enterprise Data Management Cloud Service
+•	Update Enabled Flag of a Policy in REST API for Oracle Enterprise Data Management Cloud Service
+•	Get System Settings in REST API for Oracle Enterprise Data Management Cloud Service
+•	Update System Settings in REST API for Oracle Enterprise Data Management Cloud Service
+•	Validate Viewpoint and Write to File in REST API for Oracle Enterprise Data Management Cloud Service
+
+SPECIFIED COLUMNS FOR DEFINED VIEWPOINT LOADS
+
+Defined viewpoint load profiles provide the option to configure specific columns that should be loaded from a source file into a viewpoint. This may be necessary in situations where the file column headers are different than the name/label of the viewpoint properties, or there are no column headers in the source file, or you only want to load a subset of columns defined in the file. Viewpoint load columns and column options are configured on the Columns tab of the Load inspector. When columns are specified in a defined load profile, the load process uses those columns instead of the default columns based on the properties of the viewpoint.
+
+Business Benefit: Defined viewpoint load profiles can load data from external source files that have no column headers, or column headers which do not match viewpoint property labels, or only need to load a portion of the columns in the file.
+
+Huron POV:  Configuring load profiles allows developers and stakeholders to work with a single file for multiple applications within a dimension. This enables them to load application-specific data into viewpoints by selecting only the required columns. Additionally, existing source file formats do not need to be altered, even if they have different column names or labels.
+
+Key Resources
+•	Configuring Columns in Loads in Administering and Working with Oracle Enterprise Data Management Cloud
+
+
+EDM ADMINISTRATION UPDATES
+APPLICATION REGISTRATION AND COPY AVAILABLE IN SYSTEM EVENT AUDIT
+Application registration and copy events are recorded in the system event log and can be audited on the Audit System Events screen in the user interface. This allows service administrators and auditors to identify when these events take place and who was responsible.
+Business Benefit: Service administrators can determine when an application was initially registered, when the registration was modified, or when an application was copied to create a new one.
+Huron POV: Being able to see when an application was modified may be useful when analyzing what changes to the application registration are causing across EDM and downstream systems.
+Key Resources
+•	Auditing System Events in Administering and Working with Oracle Enterprise Data Management Cloud
+AUTO ACCEPT AND EXCLUDE THRESHOLDS FOR MATCHING RULES
+Matching rules provide configurable parameters to control whether match results should be automatically accepted because they are a high confidence match, or automatically excluded because they are a low confidence match. The Auto Accept and Auto Exclude Threshold parameters can be optionally defined in the Matching Rule inspector. During a matching process, the match score for each match rule and match candidate is compared to the specified thresholds. When a match score meets or exceeds the Auto Accept Threshold, the match candidate is automatically accepted for a request item being matched. When a match score is less than or equal to the Auto Exclude Threshold, the match candidate is automatically excluded from the match results for the request item being matched. In situations where multiple match candidates meet the Auto Accept Threshold, the match candidates must be reviewed by a user to decide which is the best match to accept.
+Business Benefit: The number of match results that need to be manually reviewed by a data manager can be significantly reduced to increase user productivity and improve data quality.
+Huron POV: Configuring the thresholds can allow for developers to make the client’s life easier by decreasing the amount of manual review. These can be defined based on whatever parameters are needed by the client.
+Key Resources
+•	Creating, Editing, and Deleting Matching Rules in Administering and Working with Oracle Enterprise Data Management Cloud
+COLUMN IN POLICY LISTING REPORT DOWNLOAD TO INDICATE VALIDITY
+When downloading the Policy Listing report to a file, an additional column is included to identify whether each policy is valid or not. The Valid column provides a True value for valid policies and a False value for invalid policies. An invalid policy may have resulted from a deletion of an assigned user or group, or a metadata object which the policy depended on.
+Business Benefit: The Valid column in the Policy Listing report download can be used to determine if there are any invalid policies which need to be modified or disabled to ensure proper request workflow behavior.
+Huron POV: This can be beneficial to identify why a certain policy is not working as expected while testing. If a policy is not working as expected and the report indicates that it is invalid it will be easier to narrow down where there are problems.
+Key Resources
+•	Permissions and Policies Reports in Administering and Working with Oracle Enterprise Data Management Cloud
+DERIVED AND STORED PROPERTIES RECALCULATED WHEN NODES ARE UPDATED
+Properties configured with the Derived and Stored default type can be recalculated when a request action is performed for a node in a request. A Rederive On Update parameter is available in the Property inspector to enable this capability and can be set at the application or node type level for a Derived and Stored property. When a request action is performed directly on a node in a request, any property with a Derived and Stored origin will be recalculated and the new value is stored once the request has completed.
+Business Benefit: Derived and stored property values are automatically updated when nodes are changed during a request, avoiding the need to manually clear the properties in order to recalculate them.
+Huron POV: This functionality allows Derived & Stored properties to behave similarly to Derived properties, however this might be useful for relationship-based properties. For example, if a property is deriving and storing 
+Key Resources
+•	Derived and Stored Properties in Administering and Working with Oracle Enterprise Data Management Cloud
+EMBEDDING ENTERPRISE DATA MANAGEMENT PAGES IN NAVIGATION FLOWS
+
+Enterprise Data Management web pages can be embedded within navigation flows in Oracle Cloud EPM business processes. A navigation flow card can point to a Enterprise Data Management URL such as the Views, Request Activity, or Applications page. A headerless option can be applied to the Enterprise Data Management URL to display the web page in an embedded mode within the Cloud EPM user interface.
+
+Business Benefit: Oracle Cloud EPM users can browse Enterprise Data Management viewpoints, submit and approve requests, and initiate dimension import/export processes directly within the Cloud EPM user interface.
+
+Huron POV:  Admins can now setup a direct navigation flow to EDM within their EPM application (For ex, Planning, FCCS) making it easier for Users to make metadata changes or do approvals from their EPM application itself. The admin can decide which part of EDM they would like the users to access (can limit to Request Page or Views or keep it generic to the whole application). This is a good feature which makes the navigation across the EPM applications seamless.
+
+Key Resources
+•	Embedding Enterprise Data Management Pages in Navigation Flows in Administering and Working with Oracle Enterprise Data Management Cloud
+PROPERTY TRANSFORMATIONS IN SURVIVORSHIP RULES
+Property transformations are available for survivorship rules that are used to merge request items to existing nodes in a viewpoint from an unregistered data source. This allows for format checking or conversion of incoming values, conditional handling of null or blank values, use of a lookup set, or to populate properties that were not directly loaded from the source. A Transform operation and expression can be configured for a property to merge in the Survivorship Rule inspector. Property transformations will run during a manual match and merge in the matching workbench as well as during an auto match and merge when request items are loaded Node Clipboard Improvements into a request from an unregistered data source.
+Business Benefit: Incoming property values for request items from external data sources can be transformed when matching and merging the items to existing nodes in a viewpoint.
+Huron POV: For unregistered data sources, you can use property transformation to do the following activities
+•	Format Checking
+•	Conversion of Incoming Values
+•	Conditional Handling of null or blank values
+•	Use Lookup sets
+•	Populate Values not loaded in source.
+
+ 
+
+
+The survivorship property transformation will run for both the manual match and merge workbench as well the auto match and merge process.
+
+You don’t need this for registered data sources as the Node Type Converter would be handling the same.
+Key Resources
+•	Creating, Editing, and Deleting Survivorship Rules in Administering and Working with Oracle Enterprise Data Management Cloud
+SELECTED PROPERTY VALUES TO KEEP DURING ITEM MATCH AND MERGE
+When merging a request item that was matched to an existing node in a viewpoint, you have the option to keep specific property values from either the source node or the target node to determine the final properties of a combined node. These property selections override which properties are merged from the source node based on the node type converter (for registered data sources) or the survivorship rule (for unregistered data sources). The property selections can be different for each merged node and are used in subsequent processes where a node is auto matched and merged.
+Business Benefit: When merging a request item to an existing node, the user can choose specific property values to keep for the combined node in the event the default values to be retained based on a node type converter or survivorship rule are not the best values.
+Huron POV: This feature provides additional flexibility to the match and merge feature in EDM, by giving more power at the Matching Workbench level. You now have the option to keep specific property values from either the source node or the target node to decide how the final output would look like.
+
+These property selections will override the node type converter values for registered data sources and the survivorship rule for unregistered data sources.
+
+Another important thing to note is that these property selections will be used for subsequent processes where a node is auto matched and merged.
+
+In the screenshot below, you can see the example where we decided that we would like to keep the Postal Code of the Target. As we selected the Target Node, the radio button switched from Source to Target.
+
+ 
+Key Resources
+•	Reviewing Match Results and Applying Changes in Administering and Working with Oracle Enterprise Data Management Cloud
+SORT LISTING PAGES BY SELECTED COLUMN
+Several pages in the Enterprise Data Management user interface now support sorting displayed items by a selected column. The table content can be sorted in ascending or descending order. The following pages can be custom sorted by a particular column:
+•	Views
+•	Request Activity
+•	Applications
+•	Node Types
+•	Hierarchy Sets
+•	Node Sets
+•	Properties
+•	Lookup Sets
+Business Benefit: Listing pages in Enterprise Data Management can be custom sorted by a selected column to find particular items of interest.
+Huron POV: This can make EDM easier to navigate based on the role of the user. If there are certain actions users are more often to make they can sort the listing pages based on these.
+USERNAME COLUMN IN TRANSACTION HISTORY DOWNLOAD TO FILE
+When downloading transaction history to a file, an additional Username column is included in the resulting file to identify the username of the user who was responsible for each transaction. This column may be necessary to distinguish users in the event that multiple users have the same name.
+Business Benefit: Data managers and auditors can easily identify who was responsible for certain transactions when multiple users have the same name.
+Huron POV:
+This is an excellent usability enhancement in the transaction history for Data Managers or Auditors to find the users who were involved in a particular transaction. 
+Key Resources
+•	Auditing Transaction History in Administering and Working with Oracle Enterprise Data Management Cloud
+
+
+
+
+
+
