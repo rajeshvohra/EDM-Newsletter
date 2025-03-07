@@ -1,0 +1,390 @@
+ 
+
+The newest update for Enterprise Data Management (EDM) has been released to test environments on Friday, June 2nd and it includes over two dozen of new features. This patch enhances the EDM experience for both end users and administrators/developers; and amplifies the scalability of the EDM platform. This was released in production on June 16th, 2023. 
+
+ 
+
+The EDM patch notes below will provide a detailed summary from Oracle and our team’s tips on each update (marked Huron POV) that will provide you with additional insights the true value of the feature in the real-world beyond what is available in Oracle documentation. 
+
+ 
+
+We classified all updates into 3 groups: 
+
+User Functionality Updates 
+
+Integration Updates 
+
+Administration Updates 
+
+ 
+
+Below are 3 updates from the 23.03 patch that are highlighted editors’ picks: 
+
+•	DOWNLOAD VIEWPOINT COMPARE RESULTS TO FILE 
+
+•	PRIVATE AND PUBLIC EXTRACTS FOR DIMENSION VIEWPOINTS 
+
+•	DERIVED AND STORED DEFAULT TYPE FOR PROPERTIES 
+
+ 
+
+ 
+
+We recommend that your review all 23.06 EDM updates and if you have any questions on the features below or on your EDM implementation, please contact us at EDM_Huron@hcg.com. 
+
+ 
+
+ 
+
+Source:  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+EDM USER functionality UPDATES 
+
+DOWNLOAD POLICY AUDIT RESULTS TO FILE  
+
+When auditing changes to workflow policies, policy audit results can be downloaded to an Excel file for offline reference or to share with other interested parties. 
+
+Business Benefit: This information can be used in a governance process which monitors and controls policy enforcement within an organization. 
+
+Huron POV:  Users with Audit access can now download the policy audit results to an excel file. This is useful when providing Audit results to external parties who do not have access to EDM and would need this information for Audit purposes. 
+
+< Screenshot for Audit Policy—DT> 
+
+ 
+
+KEY RESOURCES 
+
+Auditing Policies in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+DOWNLOAD VIEWPOINT COMPARE RESULTS TO FILE                           EDITORS PICK 
+
+Viewpoint compare results can be downloaded to an Excel file for offline reference or to work with the results in an external format. The file contains separate worksheets for the compare summary, missing nodes, different relationships, and different property values. Compare results of each type are included as separate rows in the file. 
+
+Business Benefit: This provides users a way to perform recurring comparisons in order to report on changes to data over time or to share the differences between applications with other stakeholders. 
+
+Huron POV: In this feature, users will be able to download the viewpoint compare results to an excel file so they can view the various tabs for missing nodes, relation differences and property differences, as well as the Compare Summary tab. In this way, users will be able to comprehend the compare results, as well as easily fix them by viewing them in offline.  
+
+This is a welcome addition from the previous method of having to create a new request and then download the request to generate the compare results and the results are much easier to review and analyze. The Compare reports highlight the differences in specific tabs. 
+
+<Screenshot for Internal UL pod MR and FC Compare > 
+
+<Screenshot for Compare Report> 
+
+KEY RESOURCES 
+
+Running Viewpoint Comparisons in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+GRANT MULTIPLE PERMISSIONS TO APPLICATIONS AND DIMENSIONS FOR SAME USER OR GROUP  
+
+Users and groups can be granted multiple permissions to a selected application or dimension.  The permission report and audit pages now support multiple permissions to an application or dimension for the same user/group. 
+
+Business Benefit: This provides users the ability to manage metadata while having limited data access, which requires the combination of multiple permissions such as Metadata Manager and Participant. 
+
+Huron POV: This feature is enhancement to Metadata Manager permission. With the help of this functionality, Users may now combine two sets of permissions to give more precise access control, allowing them to browse and validate data in viewpoints by combining additive permission with inclusive permission levels (such as Participant (Read)) or with inclusive permission levels (such as Data Manager) to gain access to and carry out most tasks involving both data and metadata. For instance, User with only Metadata Manager permission does not grant access to data. 
+
+KEY RESOURCES 
+
+Inclusive and Additive Permissions in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+IDENTIFY VIEWPOINT CLASS FROM VIEW INSPECTOR 
+
+The viewpoint class (Normal or Time Labeled) is now available for viewpoints displayed on the Viewpoints tab of the View inspector. 
+
+Business Benefit: Displaying the viewpoint class enables users to quickly identify which viewpoints in a view are normal vs. time labeled. 
+
+Huron POV:  In the View Inspector, at the Viewpoint Tab you can now see the Viewpoint Class which can let you know if it is a normal viewpoint or a Time Labeled Viewpoint. 
+
+<screenshot> 
+
+ 
+
+REQUIRED DESCRIPTION FOR REQUESTS IN SPECIFIC VIEWS  
+
+Views can be configured to require users to provide a description for requests they submit.  When a request description is required, a default description is not generated for interactive requests and the submitting user needs to provide one instead.  Placeholder text can be customized to instruct users on the type of information which should be included in the description of requests for a specific view. 
+
+Business Benefit: This feature enables you to specify that for certain types of requests, summary information such as a business justification are required in order to comply with governance procedures and to secure the necessary approvals. 
+
+Huron POV: This will give users and administrators the ability to better audit/track requests by setting predefined specifications needed to submit a request. This will ensure the necessary detail is captured prior to submission which verifies business process and governance procedures are met. 
+
+KEY RESOURCES 
+
+Inspecting a View in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+SELECTED NODE RETAINED IN DISPLAYED VIEWPOINTS FOR REQUESTS  
+
+When submitting and approving requests, displayed viewpoints now retain the currently selected node after a request has been transitioned or closed by the user.  In previous releases, the displayed viewpoints would be refreshed and the selected nodes would not be preserved. 
+
+Business Benefit: In situations where a user is working with multiple requests, this enhancement retains the current position in the displayed viewpoints so that users don't have to re-navigate manually after a request is submitted, approved, or closed. 
+
+Huron POV: In this feature, users will be redirected to the node they selected prior to submitting the request after submitting it. When the request is submitted, the hierarchy is updated with new changes and the page is refreshed. After the refresh, the tool will take the user to the same node that was selected prior to submitting the request. With this update, users are no longer needed to manually navigate to that particular node after submitting the request, instead they can find it more easily. 
+
+ 
+
+ 
+
+ 
+
+EDM INTEGRATION UPDATES 
+
+ 
+
+IDENTIFY EXTRACT TYPE FROM DIMENSION INSPECTOR 
+
+The extract type (Full or Incremental) is displayed for extracts on the Extracts tab of the Dimension inspector. 
+
+Business Benefit: This enhancement helps users identify the extract type when browsing extracts for a dimension, which is helpful when determining which extract to select or whether a new extract needs to be created. 
+
+Huron POV: In the latest update, the Extracts tab of the Dimension inspector now displays the extract type (Full or Incremental) for each extract. This improvement provides users with the ability to easily identify the extract type when browsing through extracts for a dimension. This feature proves beneficial as it assists users in determining which extract to select and whether a new extract needs to be created, resulting in improved decision-making and efficiency. 
+
+ 
+
+IMPROVED SUBSCRIPTION HANDLING FOR INSERT AND PROPERTY UPDATE ACTIONS - ANKITH 
+
+Subscriptions have been improved to ensure proper synchronization of changes in the following scenarios: 
+
+Added nodes in source viewpoint which already exist in the target node type and should be inserted into the target viewpoint 
+
+Inserted nodes in source viewpoint which do not exist in the target node type and need to be added to the target viewpoint 
+
+Property updates from a hierarchy viewpoint to a list viewpoint when using a top node filter 
+
+Business Benefit: In these exceptional cases, this improvement helps subscriptions to properly synchronize the changes from a source viewpoint to target viewpoints. 
+
+Huron POV: The Subscription handling for requests where the UPDATE action from the subscription request has been improved which should assist with some of the exceptional cases where the subscription request will go into draft mode because it could not Add a member because it already existed (The action should be insert). The System will now check if the Node exists in the target Node Type and decide if it should be an ADD action or an INSERT action. 
+
+PRIVATE AND PUBLIC EXTRACTS FOR DIMENSION VIEWPOINTS            EDITORS PICK 
+
+Private extracts can be defined and run by any user with Participant permission or greater to a viewpoint.  Public extracts can only be defined by users with Owner or Metadata Manager permission to a dimension.  New extracts are created as private and can be separately promoted to public after creation as necessary.  Global connections can only be used in public extracts.  Pre-existing extracts which were previously created are upgraded to public extracts. 
+
+Business Benefit: This provides users who have Participant permission for browsing or editing data in viewpoints the ability to define and run their own extracts from those viewpoints. 
+
+Huron POV: Users with Participant permission or higher can now create and run their own private extracts from viewpoints. Public extracts can only be created by users with Owner or Metadata Manager permission. When creating a new extract, it starts as private but can be made public later if necessary. Public extracts can use global connections, but private extracts cannot. Existing extracts created before the update are automatically upgraded to public extracts.  
+
+The benefit of this update is that it gives users with Participant permission the freedom to create their own extracts from viewpoints. They can extract and analyze data on their own, making their work more efficient and independent. 
+
+It is important to note that all new extracts will be Private and if it has to be a public extract then the Metadata Manager or Owner will have to promote the extract. 
+
+<Screenshot> 
+
+KEY RESOURCES 
+
+Understanding Extract Type and Scope in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REST API TO GET LINEAGE OF A REQUEST  
+
+A REST API is available to get the lineage of a specified request.   This REST API can be used to determine whether subscriptions for an original request synchronized changes to other viewpoints, and to identify the target applications which were affected. 
+
+Business Benefit: This feature enables automated integration processes to incrementally import data from a source application, synchronize the changes to target applications using subscriptions, and then export those changes to the appropriate external systems. 
+
+Huron POV: Oracle EDMCS has recently introduced an impactful enhancement, empowering users with the ability to access detailed lineage information. This feature significantly enhances visibility and transparency throughout the request lifecycle. By utilizing the REST API, organizations can effortlessly track the progress of subscription requests across multiple target datasets, ensuring effective validation and monitoring. This powerful capability enables efficient tracking of automated import requests and interactive requests while providing businesses with the opportunity to analyze data flows and identify potential issues. The REST API's enhanced visibility, comprehensive auditing, and advanced data analysis capabilities strengthen request management and support informed decision-making within Oracle EDMCS. 
+
+KEY RESOURCES 
+
+Get the Lineage of a Request in REST API for Oracle Enterprise Data Management Cloud Service 
+
+ 
+
+ 
+
+EDM Administration UPDATES 
+
+ACCESS CONTROL MANAGER AND MIGRATION ADMINISTRATOR ROLES 
+
+Additional granular roles are available to enable the management of user access and perform migrations without requiring the Service Administrator role.  The Access Control Manager role provides the ability to manage groups and roles, and to report on user security.  The Migration Administrator role allows for importing and exporting migration snapshots and cloning of environments. 
+
+Business Benefit: Organizations that need certain users to manage access control and/or perform migrations without giving them the Service Administrator role can now do so. 
+
+Huron POV: This enhancement allows for non-service administrative users to be provisioned to be able to manage either user security through groups and roles or migration activities.  This will be useful to larger organizations that may have dedicated teams responsible for user security or migration activities but not both and not as a service administrator. 
+
+KEY RESOURCES 
+
+Understanding Application Roles and Permissions in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+DERIVED AND STORED DEFAULT TYPE FOR PROPERTIES                       EDITORS PICK 
+
+Node level properties can be configured with a Derived and Stored default type to calculate and store a value based on an expression. Property values are derived during a request and stored once a request has reached Completed status.  Existing derived and stored property values are recalculated when clearing the value of the Derived and Stored property.  Derived and stored properties can generate new values as part of a request, when importing a dimension, or during a viewpoint load. 
+
+Business Benefit: Property values which are derived and stored can be indexed for query purposes.  They can also be derived from information in a hierarchy viewpoint and be accessible as stored values in a list viewpoint. 
+
+Huron POV: The Derived and Stored Default Type for Properties feature in Oracle EDMCS provides the ability to calculate and store default property values using expressions. These values are calculated once and stored on the node, eliminating the need for frequent recalculations. Derived and stored properties can generate new values during various operations and can be used for querying purposes. They can also leverage information from a hierarchy viewpoint, making them accessible as stored values in a list viewpoint. By leveraging this feature, businesses can enhance the efficiency and accuracy of property calculations, minimize repetitive calculations, and optimize performance in the EDMCS environment.  
+ 
+
+KEY RESOURCES 
+
+Derived and Stored Properties in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+DETERMINE PARENT NODE TYPE WHEN CALCULATING PARENT IN TARGET VIEWPOINT  
+
+When calculating the parent of a node in a hierarchy viewpoint, the parent could be of multiple node types. To determine the appropriate node type, a node lookup is performed to identify an existing node in one of the node types for the viewpoint. 
+
+Business Benefit: This provides a way to determine the correct node type for a calculated parent in a hierarchy viewpoint in subscriptions, request file loads, and when creating request items from compare differences. 
+
+Huron POV: This is a useful feature for certain scenarios where a viewpoint might have different node types for parents and children. This feature will help determine the correct node type for the calculated parent. 
+
+KEY RESOURCES 
+
+Calculated and Stored Properties in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+DOWNLOAD PROPERTY DEFINITIONS TO FILE  
+
+Property definitions can be downloaded to an Excel file in a report format to offer visibility and comparison of property parameters across applications and node types.  You can either download all properties or an individual selected property.  The file includes separate worksheets for property parameters, allowed values, invalid values, and expressions. 
+
+Business Benefit: This provides application owners and Service Administrators a way to download an offline listing of property definitions for reference purposes and an easy way to filter and visually compare property parameters at the base, application, and node type level. 
+
+Huron POV: This feature will allow User to download property definitions for a single property or for all properties from the property work list or the property inspector, which will allow to compare the information of base parameters as well as any application and node type overrides for the properties. This will also enable User to filter and compare property parameters at the base, application, and node type level in an offline file.  Property, Allowed Values, Invalid Values, and Default Expression will be in separate tabs in the downloaded file. 
+
+ 
+
+KEY RESOURCES 
+
+Downloading Property Definitions in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+HIERARCHY SET FOR NODE OBJECTS IN EXPRESSIONS  
+
+Hierarchy set information is accessible within an expression to allow for conditional logic based on the hierarchy set of a node in a viewpoint.  The HierarchySet attribute on a Node object can be used to identify the hierarchy set of the current node, a related node in the viewpoint, or a source node. 
+
+Business Benefit: This enables expressions for calculated parents, derived properties, custom validations, and policy filters to behave differently based on the hierarchy set of a viewpoint. 
+
+Huron POV: The availability of Hierarchy set node objects in expressions provides several benefits. It enables you to define calculated parents, which are nodes whose values are determined based on the values of their child nodes within a specific hierarchy set, it also allows for derived properties, custom validations, policy filters to be tailored and applied based on the hierarchy set of a viewpoint, providing more flexibility and adaptability in data management processes. 
+
+The hierarchy set information associated with node objects in expressions allows to implement conditional logic and customize the behavior of calculated parents, derived properties, validations, and policy filters based on the hierarchy set of a node in a viewpoint. 
+
+KEY RESOURCES 
+
+Node Data Type in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+INSPECT COMPARE PROFILE FROM COMPARE PANE IN OPEN VIEW  
+
+Predefined compare profiles can be inspected from the Compare Viewpoints pane in an opened view.  This allows for easy access to the details of the compare profile and enables view owners to quickly modify the compare parameters if necessary. 
+
+Business Benefit: When performing viewpoint comparisons, it is helpful to access the details of a selected compare profile and make changes to the compare parameters to return different results. 
+
+Huron POV: The ability to inspect and compare profiles from the Compare Viewpoints pane in an opened view allows users to easily access and modify the parameters of predefined compare profiles. Compare profile represents asset of predefined criteria or rules that rare used to compare and analyze data between different viewpoints. hen working with the Compare Viewpoints pane in an opened view, users can inspect the details of a selected compare profile. This includes accessing information such as the specific criteria or rules defined within the profile. 
+
+Inspecting a compare profile from the Compare Viewpoints pane provides view owners or administrators with a convenient way to review the configuration and parameters of the profile. 
+
+This enables them to quickly understand how the comparison is performed and determine if any modifications or adjustments are needed. By being able to modify the compare parameters directly from the Compare Viewpoints pane, view owners can easily adjust the criteria, rules, or other settings of the compare profile. This flexibility allows them to refine the comparison process and obtain different results based on their specific requirements. 
+
+KEY RESOURCES 
+
+Running Viewpoint Comparisons in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+METADATA MANAGER PERMISSION FOR APPLICATIONS AND DIMENSIONS  
+
+A Metadata Manager permission can be granted to users and groups to allow them to create, edit, and delete metadata objects without giving them access to data.  Metadata Manager permission can be assigned at the application or dimension level.  This permission allows for administration of all metadata objects in an application or dimension including node types, hierarchy sets, converters, custom validations, permissions, and policies.  Metadata managers must be granted an additional permission in order to give them access to data in the application or dimension. 
+
+Business Benefit: This enhancement provides the ability to grant users and groups permissions at a more detailed level. For example, a user may need to manage metadata in an application but should not be able to access the data within it or delete the application. 
+
+Huron POV: Access to applications, dimensions, data chain objects, and data is secured by EDM permissions. Metadata Manager is the permission granted as an additional access without being included in other permission levels. When access to applications and data chain objects needs to be granted at a more specific level, the user can set this permission. To provide a finer level of control over a user's access, the user can also combine this with other inclusive permissions (Owner, Data Manager, and Participant), which will enable users to create, edit, and delete all metadata objects in an application or dimension. But this limits user's ability to Create or Delete Application by the Metadata Manager permission. 
+
+KEY RESOURCES 
+
+Inclusive and Additive Permissions in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+REPLACE PERMISSIONS AND POLICY GROUPS DURING TEMPLATE IMPORT 
+
+Import options are available to control how changes to permissions and policy groups are applied during a template preview or import process. By default, new permissions and policy groups from the source template are merged with existing permissions and policy groups in the target environment.  A Replace Permissions option can be used to replace existing permissions in the target environment with those from the source template.  A Replace Policy Groups option allows for existing policy groups to be replaced with those from the template.  The template import options are available on the Templates page of the user interface and the REST API. 
+
+Business Benefit: This feature provides a way to ensure that user and group permissions are the same across multiple Enterprise Data Management environments such as Test and Production. It also provides a way to ensure that users and groups assigned to workflow policies are consistent across these environments.  
+
+Huron POV: Now the admins have an additional option of selecting if they want to replace permissions and policy groups during the template migration approach. If they choose not to select this option, the new permissions and policy groups from the source template will be merged with the existing permissions and policy groups in the target environment. 
+
+KEY RESOURCES 
+
+Working with Templates in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+REPLAY SUBSCRIPTIONS AS VIEW OWNER  
+
+View owners can replay subscriptions for requests in their views which have one or more failed subscriptions. Previously, only service administrators were able to replay subscriptions for an original request. 
+
+Business Benefit: This feature provides more granular control over who can resolve configuration issues with subscriptions. 
+
+Huron POV: This feature is an enhancement to Replay Subscriptions for Completed Requests functionality released in last quarterly update. In some rare cases where subscription may fail for completed requests because of some configuration issues such as missing subscription assignee (In case of migrating from EDM Test to EDM Prod, where the subscription assignee in Test is not in Prod), enabling view owners to now reprocess subscriptions along with the service administrators helps to have more control over the requests from a particular view for a view owner. It provides the ability for view owners to ensure data synchronization across viewpoints as well.  
+
+KEY RESOURCES 
+
+Viewing Request Lineage in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+ROLLING PERIOD TIME LABELS FOR FISCAL YEAR AND QUARTER END  
+
+Rolling time labels can be defined using a Fiscal Quarter End or Fiscal Year End period type to enable dynamic, time labeled viewpoints based on a fiscal calendar.  A Fiscal Year End Month system setting is available to configure the end month of an organization's fiscal calendar. 
+
+Business Benefit: This feature provides the ability to analyze periodic snapshots of data based on a fiscal calendar instead of the Gregorian calendar. 
+
+Huron POV: Previously Time Labels in viewpoints were fixed, meaning specified date would be provided and the viewpoint would reflect changes from that date until present. 
+
+With this enhancement, time level viewpoints can use a rolling period rather than a fixed period. The two options for rolling periods which are those based on calendar years, or fiscal (if defined) periods based on the calendar or fiscal year end month or using a prior to current option, where you define the period from which you want to display data for. 
+
+This is a needed enhancement to the existing time level functionality enabling it to be much more dynamic and representative of how most organizations look at data, in addition to considering that many organizations fiscal and year-end calendars are not the same. 
+
+ 
+
+KEY RESOURCES 
+
+Creating, Editing, and Deleting Time Labels in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+SUPPORT FOR ORACLE ENTERPRISE DATA MANAGEMENT CLOUD IN THE ORACLE IMPLEMENTATION SUCCESS PROGRAM  
+
+The Oracle Implementation Success Program (ISP) now supports Oracle Enterprise Data Management Cloud. 
+
+Business Benefit: ISP is a customer-focused initiative that strives to significantly increase the success rate of Oracle Enterprise Data Management Cloud implementations. 
+
+Huron POV:  The Implementation Success Program (ISP) strives to bring the expertise of EPM Cloud Development Teams in application design to customers' implementation in an efficient manner through an expedited evaluation of application design document review. The review ensures that the application design adheres to Oracle recommended best practices. 
+
+An Oracle representative (Product Manager or a member of the Sales Team) discusses the program with customers, who then can make a formal request to participate in the program. 
+
+KEY RESOURCES 
+
+Enrolling in the Implementation Success Program in the Oracle Enterprise Performance Management Cloud Operations Guide 
+
+ 
