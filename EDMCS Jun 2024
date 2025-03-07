@@ -1,0 +1,369 @@
+ 
+
+The newest update for Enterprise Data Management (EDM) has been released to test environments on Friday, Jun 7th and it includes over two dozen new features. This patch enhances the EDM experience for both end users with some really good user features and administrators/developers; and amplifies the scalability of the EDM platform. This was made available in production as of Jun 21st, 2024. 
+
+ 
+
+The EDM patch notes below will provide a detailed summary from Oracle and our Huron team’s tips on each update (marked Huron POV) that will provide you with additional insights the true value of the feature in the real-world beyond what is available in Oracle documentation. 
+
+ 
+
+We classified all updates into 3 groups: 
+
+User Functionality Updates 
+
+Integration Updates 
+
+Administration Updates 
+
+ 
+
+Below are 3 updates from the 24.06 patch that are highlighted editors’ picks: 
+
+Tax reporting application type 
+
+Node CLipboard for viewpoints 
+
+copy and model after nodes using request files and subscriptions 
+
+ 
+
+ 
+
+We recommend that your review all 24.06 EDM updates and if you have any questions on the features below or on your EDM implementation, please contact us at EDM_Huron@hcg.com. 
+
+ 
+
+ 
+
+ 
+
+Source:  
+
+ 
+
+ 
+
+EDitor’s PIcks 
+
+TAX REPORTING APPLICATION TYPE 
+
+A new application type is available in Enterprise Data Management to manage dimensions and mappings for the Tax Reporting business process in Oracle EPM Cloud. Tax Reporting applications can be registered on the Applications page, may include standard and attribute dimensions, and provide support for a variety of tax reporting options. Mapping bindings and viewpoints can also be created for Tax Reporting applications after registration. The application type includes predefined properties and validations for managing data as well as with bindings and connections for importing and exporting data. 
+
+Business Benefit: Tax Reporting application dimensions and mappings can be managed in a dedicated application type in Enterprise Data Management. 
+
+Huron POV: The introduction of the Tax Reporting application type is a significant advancement for Oracle EDM users. This feature simplifies data integration, enhances accuracy with predefined properties and validations, and reduces the manual effort which previously required when using different application types to configure master data for tax reporting. Additionally, it offers new dimension types (beyond those available in other EPM applications) to select during application registration, making the configuration even more robust. *We recommend anyone that has used a different application type for integrating to Tax Reporting consider a refactoring to switch to this newly available application type. 
+
+ 
+
+KEY RESOURCES 
+
+Working with Tax Reporting Applications in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+NODE CLIPBOARD FOR VIEWPOINTS 
+
+The node clipboard enables users to select multiple nodes from a viewpoint and insert them together into one or more other viewpoints. Nodes can be added to the clipboard from any viewpoint and then inserted under different parents in the same viewpoint or into other viewpoints in the same view using a drag and drop operation. When nodes which are no longer required on the clipboard, they can be removed as necessary. Nodes remain on the clipboard until the view is closed or reloaded. 
+
+Business Benefit: Alternate hierarchies and viewpoints consisting of many nodes can be quickly constructed and aligned using the node clipboard. Users can easily insert multiple nodes into multiple viewpoints increasing productivity and reducing the manual effort to perform those changes. 
+
+Huron POV: The new EDM update introducing the node clipboard is a game-changer for users managing complex data hierarchies. As a user, you can now seamlessly select multiple nodes from any viewpoint and insert them into one or more other viewpoints with a simple drag and drop. This functionality significantly enhances the efficiency of managing data structures. You can construct and align alternate hierarchies and viewpoints consisting of many nodes swiftly, without the repetitive manual effort previously required. 
+
+ 
+
+This update is particularly beneficial when dealing with large datasets where quick adjustments are necessary. By allowing nodes to be added to the clipboard from any viewpoint and inserted under different parents in the same or other viewpoints, the tool offers unprecedented flexibility and speed. Furthermore, the ability to remove nodes from the clipboard when they are no longer needed ensures you maintain control over your working environment, keeping it clutter-free and organized. 
+
+ 
+
+The node clipboard retains nodes until the view is closed or reloaded, giving you ample time to make necessary adjustments without the pressure of losing your selections. Overall, this update significantly boosts productivity, allowing you to focus on more strategic tasks rather than getting bogged down by tedious data management processes. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Drag and Drop Feature 
+
+ 
+
+KEY RESOURCES 
+
+Working with the Node Clipboard in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+COPY AND MODEL AFTER NODES USING REQUEST FILES AND SUBSCRIPTIONS  
+
+New nodes can be created based on a Copy or Model After action during a request file load or via a subscription. The request file load format includes two optional columns (Copy Node and Copy Action) which are used to perform the Copy or Model After operation when loading a request file. Subscriptions can be optionally configured with Copy Action and Properties To Match parameters to perform a Copy or Model After operation in a subscription request. The subscription request will copy or model after the node specified in the original request or can automatically choose a sibling node to copy/model after based on certain matching properties. 
+
+Business Benefit: New nodes added by a request file load can copy property values and hierarchy relationships from other existing nodes in the same viewpoint. Performing a Copy or Model After via a subscription enables nodes added to target viewpoints to copy property values and hierarchy relationships of existing nodes in those viewpoints. 
+
+Huron POV: 2 Additional Columns (Optional) have been added to the Load Request Format (Copy Node and Copy Action). This feature allows for flexibility for users as now Copy Feature is available for them via Load Request Files. The Users can decide what action they need to perform in Copy Action (Copy Properties or Model After) and which node do they want to Copy (Copy Node). This feature is very beneficial for users as they can create the Model After or Copy feature for bulk changes as well. 
+
+In addition, Administrators can set this in subscriptions as well to perform the Copy or Model After operation in a subscription request. This is a very powerful feature as this opens the opportunity to handle Alternate Hierarchies automatically without the users needing it Insert a node under different parents. 
+
+ 
+
+KEY RESOURCES 
+
+Request Load File Format in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+Performing Copy and Model After Operations in Subscriptions in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+EDM USER functionality UPDATES 
+
+APPLICATION SPECIFIC VALIDATION FOR EQUIVALENT NODES IN RELATED VIEWPOINTS 
+
+An application specific validation is available to verify whether certain nodes in a viewpoint also exist in one or more other related viewpoints. The Equivalent Nodes With Filter validation is disabled by default but can be enabled for any dimension where the same nodes must be in multiple viewpoints for data integrity reasons. The Related Viewpoints and Equivalent Nodes Filter parameters need to be configured for viewpoints where the validation will be enforced. 
+
+Business Benefit: This validation ensures completeness of nodes across multiple related viewpoints in a dimension for reconciliation purposes. 
+
+Huron POV: This validation checks for if nodes are present in other related viewpoints. For example, if a dimension has a List Viewpoint and a Hierarchy Viewpoint, we can use this validation to check if all members in the List are present in the hierarchy. This can help us identify orphan nodes which are not currently used. 
+
+To enable this, we need to configure the Related Viewpoints and the Equivalent Nodes Filter parameters at the viewpoint where the validation is to be enforced. 
+
+ 
+
+Once the configuration is complete, you can enable the validation at the dimension level and set the severity for the validation. 
+
+ 
+
+KEY RESOURCES 
+
+Configuring Related Viewpoints in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+CALCULATED NAME FOR NODES ADDED BY COPY OR MODEL AFTER ACTION 
+
+Names can be calculated for new nodes that are added to a viewpoint using a Copy or Model After action. The calculated name can be based on properties and relationships which are copied or some other information about the node. Node names can be calculated when performing a Copy or Model After operation interactively, during a request file load, or using a subscription. 
+
+Business Benefit: Node names can be calculated for new nodes which are copied or modeled after existing nodes in a viewpoint. 
+
+Huron POV: Creating new members by copying or modeling after existing members is often preferred by users over adding a brand-new member. This is because many of the new member’s properties will already be populated when it is copied or modeled. However, prior to this update users would not be able to do this if they also wished to take advantage of calculated node names. Now, the calculated node name capability has been extended to work for copied and modeled nodes as well as brand-new additions.  
+
+KEY RESOURCES 
+
+Calculating and Storing the Name of a Node in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+COPY NODES AND INCLUSION PROPERTY PARAMETERS ADDED TO SUBSCRIPTIONS REPORT  
+
+The Subscriptions report has been enhanced to include additional parameters that can be configured in a subscription. A Filters column has been added to cover all subscription filters (including the Inclusion Property filter) and the individual Actions, Top Nodes, and Node Expression columns have been removed from the report. A Copy Nodes column has been added to identify subscriptions which use the Copy Action and Properties to Match parameters. These changes are also available in the Subscriptions report download. 
+
+Business Benefit: Users can easily determine which subscriptions are configured with the Copy Nodes parameters or Inclusion Property filter. 
+
+Huron POV: With the enhancements to subscriptions where now you can configure the Copy or Model After, an additional column is added to the Subscription report which will help identify where copy nodes are being passed in subscriptions. This will also be helpful for explaining to end-users how nodes are propagated through the system and the parameters/conditions of the subscriptions.  
+
+ 
+
+ 
+
+KEY RESOURCES 
+
+Subscriptions Report in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ESCALATION INDICATOR FOR INVITEES IN REQUEST INSPECTOR 
+
+An escalation indicator is displayed on the Workflow tab of the Request inspector for invitees who were invited to approve or commit because the request was escalated to them for one or more workflow policies. This allows users to determine when a request has been escalated and to whom. 
+
+Business Benefit: Users of a request can easily identify approvers and committers who were invited when a request is escalated. 
+
+Huron POV: Before this feature, it was always a challenge to find out who are the users that are invited as part of the escalation during the Approve and Commit stage. It was a gap in the governance process of committing requests. By introducing the escalation indicator in this release, Oracle has further streamlined the governance process and made it very easy to find all the users that were involved in the life cycle of a particular request. 
+
+KEY RESOURCES 
+
+Inspecting Requests in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+MANAGEMENT HIERARCHY APPROVALS 
+
+Approval policies can be configured with the Management Hierarchy approval method to invite approvers based on a hierarchy of users defined in a User’s type application. Users who are ancestors of the request owner in the management hierarchy are individually invited to approve their requests in a sequential manner. The approval policy can be set up with a fixed or variable number of approvals before the policy is fulfilled. 
+
+Business Benefit: Requests submitted by different users can have different approvers based on an organizational hierarchy that is maintained in Enterprise Data Management or loaded from a source system. 
+
+Huron POV: Approval policies using the Management Hierarchy method streamline the approval process by engaging approvers based on an established user hierarchy. This method invites each ancestor of the request owner in a sequential manner, ensuring approvals follow the organizational chain of command. Policies can be customized to require a specific or variable number of approvals, offering flexibility to meet diverse business needs. The primary benefit is that it aligns approvals with the organizational structure, ensuring relevant oversight. This is particularly useful for maintaining consistency and accountability, as different users’ requests are approved by the appropriate personnel according to the defined hierarchy. 
+
+KEY RESOURCES 
+
+Understanding Management Hierarchy Approvals in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+REQUEST PRIORITY- GOOD Feature! 
+
+A priority can be set for enterprise data requests to identify the urgency of the changes included in the requests. The request owner can set or modify the priority during the Submit stage. The Request Activity page provides a Priority column and filter to find requests based on their priority. Workflow policies can be filtered by request priority to enable different workflows for requests with different priorities. 
+
+Business Benefit: Users can specify the priority of their requests to describe their importance and route the requests through a conditional workflow process to ensure they are approved and committed in a timely fashion. 
+
+Huron POV: Request owners will now be able to set priority on requests in the submit stage. This allows approvers to prioritize/filter workflows and address requests based on urgency. Request priority will be shown in the header of the request details pane, the request activity worklist, and on the summary tab of the request inspector.  
+
+ 
+
+KEY RESOURCES 
+
+Setting and Viewing Request Priority in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+EDM INTEGRATION UPDATES 
+
+NEW EXTRACTPACKAGE EPM AUTOMATE COMMAND 
+
+The extractPackage EPM Automate command is now available. This command runs an extract package consisting of multiple extracts for an application using a single operation. The results of each extract in the package are added to a ZIP file, which can be written to the staging area or to a global connection. 
+
+Business Benefits: This command helps you extract packages to a file or destination so that they can be propagated across environments. 
+
+Huron POV: Continuing to build upon extract related enhancements made available in the last major release, Oracle has made the command to run an extract package available through EPM Automate. This will enhance not only the ability to automate the execution of these packages but do so with the ability to produce a zip file containing the output files of the extracts in the package and has the ability to use global connections to have the outputs land in the Inbox location of EPM cloud application or to the specified document account for an Oracle ERP Cloud application. If not used, the output files will default to the EDM outbox (staging area) of the current application.  
+
+This update does not require an extract or extract package to have its own Global Connection, which reduces the number of objects in the application, as well as the need to update objects in more than one location if a change to the connection is required. 
+
+KEY RESOURCES 
+
+Working with EPM Automate for Oracle Enterprise Performance Management Cloud 
+
+Installing EPM Automate 
+
+extractPackage command 
+
+ORACLE EDM CLOUD – ORACLE DATABASE | SYNC ENTERPRISE DATA RECIPE AVAILABLE FOR ORACLE INTEGRATION- GOOD Feature! 
+
+The Oracle EDM Cloud – Oracle Database | Sync Enterprise Data recipe is now available for Oracle Integration. This recipe enables you to synchronize enterprise data bidirectionally between Oracle Enterprise Data Management Cloud and Oracle Database. The recipe contains two integrations. Use the EDM DB Extract Sync integration to extract enterprise data from a viewpoint in Oracle Enterprise Data Management and load it into a database table. Use the DB EDM Extract Sync integration to extract data from a database table and load it into a viewpoint in Oracle Enterprise Data Management. 
+
+NOTE: You must create an agent group and install the on-premises connectivity agent before you download the recipe. This allows messages to be exchanged between Oracle Integration and your locally installed Oracle Database resource. 
+
+Business Benefit: This recipe enables you to accelerate the integration of Oracle Enterprise Data Management with the Oracle database by loading a viewpoint in Enterprise Data Management from a table in Oracle database or hydrating an Oracle database table with a viewpoint extract from Enterprise Data Management. 
+
+Huron POV: This is a very strong enhancement in the EDM capability to use Oracle Integration Cloud for syncing up the master data with external Oracle Cloud database. It will save lots of custom work that was earlier required to synchronize the master data with oracle database. This recipe is available in the integration store and customers can use this recipe for reference purposes. It can be copied to the new integration and customers can further fine tune the integration as per their specific need. 
+
+KEY RESOURCES 
+
+Sync Oracle Enterprise Data Management Cloud with Oracle Database 
+
+REST API AND EPM AUTOMATE IMPROVEMENTS FOR GLOBAL CONNECTIONS IN EXTRACTS AND EXTRACT PACKAGES  
+
+The Connection parameter specified when running extracts and extract packages now provides the option to use a global connection other than the one that is preconfigured. This capability is available when running extracts and extract packages via the REST API or EPM Automate. In previous releases, the Connection parameter supported only the global connection that is configured with the extract definition or extract package. 
+
+Business Benefit: Output files for an extract and extract package can be written to multiple global connections by specifying a different connection at run time. 
+
+Huron POV: The ability to utilize predefined global connections as a parameter provides clients a way to leverage a connection, or multiple connections and apply them to extract dimensions, dimension viewpoints or extract packages. This gives customers flexibility depending on what their integration solutions are. Decreasing maintenance on individual data extractions.  
+
+ These are great features which expand the flexibility of existing data extractions to give clients more options for customizations and an improved maintenance of key dependencies of the extracts, in this case the connections they can leverage. 
+
+KEY RESOURCES 
+
+Extract a dimension viewpoint in REST API for Oracle Enterprise Data Management Cloud Service 
+
+Run an extract package in REST API for Oracle Enterprise Data Management Cloud Service 
+
+extractDimension in Working with EPM Automate for Oracle Enterprise Performance Management Cloud 
+
+ 
+
+SIBLING SORT ORDER COLUMN FOR FINANCIALS CLOUD GENERAL LEDGER EXPORTS 
+
+Dimension exports for Financials Cloud General Ledger applications include an additional column in the GLSegmentHierInterface file to identify the order of sibling nodes under parents in hierarchies. This column is used by the Import Segment Values and Hierarchies process in Oracle ERP Cloud to control the order of tree nodes that are created or updated. 
+
+Business Benefit: General ledger hierarchies in Oracle ERP Cloud use the same order of nodes as defined in Enterprise Data Management hierarchy viewpoints. 
+
+Huron POV:  EDM exports for Financial Cloud General Ledger has been updated to include the sibling sort order to match the Import Segment Values and Hierarchies process. This sibling order will be using the same order as defined in the EDM hierarchy viewpoints. 
+
+KEY RESOURCES 
+
+Exporting Oracle Financials Cloud General Ledger Dimensions in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+SORT OPTION FOR VIEWPOINT EXTRACT COLUMNS 
+
+A Sort option can be configured for one or multiple columns of a viewpoint extract to control the order of rows which are written to the output file. Column based sorting is limited to Full extracts only. A viewpoint extract can have one primary and one secondary column used for sorting. Rows in the output file can be sorted in ascending or descending order. 
+
+Business Benefit: Rows in an extract output file can be ordered differently than the order in which the nodes exist in the viewpoint for the extract. 
+
+Huron POV: This enhancement will be beneficial to business users and integration teams alike who have use cases which require the need for sorted metadata prior to consumption. This tool will add inherent functionality to extracts and reduce the need for custom derivation logic pertaining to sorted nodes. 
+
+KEY RESOURCES 
+
+Selecting Extract Columns in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+EDM Administration UPDATES 
+
+CREATE AND DELETE EVENTS FOR ADDITIONAL METADATA OBJECTS IN SYSTEM EVENT AUDIT  
+
+Events for the creation and deletion of additional metadata objects are tracked and can be reviewed from the Audit System Events screen in the user interface. Audit results can be filtered by a selected object type in the Metadata event category. 
+
+Create and delete events are now recorded for the following metadata objects: 
+
+Bindings and global connections 
+
+Extracts and extract packages 
+
+Queries and compare profiles 
+
+Subscriptions and time labels 
+
+Business Benefit: Application owners and Service Administrators can identify when these metadata objects are created and deleted along with who was responsible. 
+
+Huron POV: This update enhances audit and governance by tracking EDM object creation and deletion. This is especially helpful for end-user related items, like queries, compare profiles, subscriptions, and time-labels – so there is no question on when things were generated or deleted. Additionally, this is helpful for troubleshooting on the integration side when leveraging extracts.  
+
+KEY RESOURCES 
+
+Auditing System Events in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+IMPROVED SUBSCRIPTION MANAGEMENT FOR ARCHIVED DIMENSIONS AND VIEWPOINTS  
+
+Subscriptions are now automatically ignored during request processing after a dimension or viewpoint is archived. When a dimension or viewpoint is unarchived, subscriptions will be reactivated to continue generating subscription requests. In previous releases, subscriptions for an archived dimension needed to be manually disabled in order to prevent them from being run and when a viewpoint was unarchived, subscriptions were not automatically re-enabled. 
+
+Business Benefit: Owners and metadata managers no longer need to manually disable and enable subscriptions when dimensions and viewpoints are archived and unarchived. 
+
+Huron POV:  This update simplifies the subscription management process as subscriptions are automatically disabled when a dimension or viewpoint is archived. No manual interactions are needed at the subscription level when the dimension or viewpoint is archived or unarchived. 
+
+KEY RESOURCES 
+
+Subscribing to Viewpoints in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+PREVENT DELETION OF SUBMITTED REQUESTS 
+
+A system setting is available to prevent the deletion of submitted requests which were recalled or pushed back to the request owner. The setting can be configured by a service administrator and applies to submitted requests for any application and view in the system. When a user attempts to delete a recalled or pushed back request, the request will be transitioned to the Closed stage instead of deleted. 
+
+Business Benefit: This setting retains obsolete requests which were recalled or pushed back to ensure they can be audited. 
+
+Huron POV: Oracle's new system setting prevents the deletion of recalled or pushed back requests, transitioning them to the Closed stage instead. This enhances auditability and transparency by retaining a complete history of transactions. Administrators can configure this setting for all applications, ensuring flexibility and control. The feature prevents unintentional data loss and supports compliance with regulatory requirements, improving overall process integrity and accountability in business operations. 
+
+KEY RESOURCES 
+
+Configuring System Settings in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+PREVENT REJECTION OF SELECTED REQUEST TYPES 
+
+The Reject workflow action for a request can be optionally restricted for approvers and committers of certain types of requests. A system setting is available to enable or disable this restriction and select the request types where rejection will be prevented. When rejection is not permitted, a request can only be pushed back or recalled if it is not approved. 
+
+Business Benefit: Restricting the Reject action prevents requests from being unintentionally closed by approvers or committers. These requests remain active so they can be modified accordingly in order to be successfully completed, rather than requiring a new request to be created and submitted. 
+
+Huron POV: Oracle's new feature allows restricting the Reject workflow action for certain types of requests, which can be configured in system settings. Approvers and committers can only push back or recall these requests if not approved, preventing unintentional closures. This ensures requests remain active for necessary modifications, avoiding the need to create new requests. This feature enhances workflow efficiency, reduces administrative overhead, and ensures smoother completion of processes. 
+
+KEY RESOURCES 
+
+Configuring System Settings in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+REQUEST VALIDATION SCOPE FOR CUSTOM VALIDATIONS - GOOD Feature! 
+
+Custom validations can be configured with a Node or Parent scope to control which node is evaluated during request item validation. Node scope validations evaluate the node for which request actions have been performed. Parent scope validations evaluate the parent of the node that has request actions. Validations with the Parent scope run only for changes made to hierarchy viewpoints. When validating a viewpoint outside of a request context, Parent scope validations run for every node in the viewpoint. 
+
+Business Benefit: Parent nodes in hierarchy viewpoints can be validated when performing request actions such as Insert, Move, and Remove on their child nodes. For example, when a parent node must have at least one child node of a particular type or a parent node cannot have multiple children with certain property values. 
+
+Huron POV: Custom validations can be configured from a node’s parent node now. We can set validations based on a parent’s children requiring certain properties. An example of this would be to have a hierarchy with parents being locations and employees tied to them where only one of these employees is the “Owner’ of the account. We can also validate to prevent parent nodes from no longer having any children, which is a requirement for Oracle ERP cloud and many other applications. 
+
+KEY RESOURCES 
+
+Working with Custom Validations in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+USE IDCS GROUPS WITH PERMISSIONS, POLICIES, SUBSCRIPTIONS, AND VIEWS 
+
+Identity Cloud Service (IDCS) groups can now be directly granted permissions as well as directly assigned to policies, subscriptions, and views. Users in the IDCS groups inherit the grants and assignments for the IDCS group that they belong to. In previous releases, IDCS groups needed to belong to an EPM group in order to be granted permissions for these Enterprise Data Management artifacts. 
+
+Business Benefit: IDCS groups can be directly granted permissions and assigned to policies, subscriptions, and views. 
+
+Huron POV: This enhancement marks improvements in security and access management for Oracle EDM customers and will result in a different security approach for future EDM implementations. Now, rather than creating groups directly within EDM for use in role and permission assignment, IDCS groups can be used instead. This will allow admins to manage group membership centrally in IDCS rather than in individual applications like EDM.   
