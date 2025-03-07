@@ -1,0 +1,549 @@
+ 
+
+The newest update for Enterprise Data Management (EDM) has been released to test environments on Friday, March 1st and it includes over 30 new features. This patch enhances the EDM experience for both end users and administrators/developers; and amplifies the scalability of the EDM platform. This will be available in production environment from March 15th, 2024. 
+
+ 
+
+The EDM patch notes below will provide a detailed summary from Oracle and our team’s tips on each update (marked Huron POV) that will provide you with additional insights the true value of the feature in the real-world beyond what is available in Oracle documentation. 
+
+ 
+
+We classified all updates into 3 groups: 
+
+User Functionality Updates 
+
+Integration Updates 
+
+Administration Updates 
+
+ 
+
+Below are 3 updates from the 24.03 patch that are highlighted editors’ picks: 
+
+CALCULATED NAME FOR NODES ADDED TO VIEWPOINTS 
+
+SELECT MULTIPLE NODES TO INSERT OR MOVE IN A HIERARCHY VIEWPOINT 
+
+SAVED FILTERS FOR REQUEST ACTIVITY AND TRANSACTION HISTORY 
+
+ 
+
+We recommend that your review all 24.03 EDM updates and if you have any questions on the features below or on your EDM implementation, please contact us at EDM_Huron@hcg.com. 
+
+ 
+
+ 
+
+Source:  
+
+ 
+
+ 
+
+EDitor’s PIcks 
+
+ 
+
+CALCULATED NAME FOR NODES ADDED TO VIEWPOINTS 
+
+Names for new nodes added to viewpoints can be calculated based on an expression to allow for the automatic generation of unique identifiers for nodes in a list or hierarchy. Calculated node names can be based on properties of a node or its hierarchy relationships. Calculated names may be overridden with a defined value and overrides can be cleared to return to a calculated value. If the properties or relationships of an added node are changed, a calculated name can be reset to force a recalculation of the name. 
+
+Node names can be calculated in the following situations: 
+
+Add a node interactively. 
+
+Load a request file. 
+
+Synchronize a node via a subscription. 
+
+Business Benefit: Nodes in viewpoints can be automatically named based on other properties and relationships of a node. For example, a calculated node name may use a Sequence property, or the name of an ancestor node, or the combination of multiple Node data type properties. 
+
+Huron’s POV: Perhaps the most awaited feature in EDM and now it’s here. The core Name attribute can now be calculated by means of an expression. The calculation expression can be based off the node’s properties or from its position in hierarchy. What this also allows you to do, is to provide a custom prefill text in the name field which until now was defaulted to “New <Node Type Name>” for a given node. This calculation also works with the request upload files with certain keywords. We at Huron believe that this will open doors to better automation capabilities when it comes to naming a specific member based of a sequence or other properties. 
+
+KEY RESOURCES 
+
+Calculating and Storing the Name of a Node in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+SELECT MULTIPLE NODES TO INSERT OR MOVE IN A HIERARCHY VIEWPOINT 
+
+Multiple nodes can be selected at the same time when inserting or moving nodes in a hierarchy viewpoint using the node selector dialog. This allows multiple nodes from a common parent or different parents to be inserted or moved together in a single operation. Selection of multiple nodes is available when inserting nodes within the same viewpoint or across different viewpoints but only when node type conversion is not required. 
+
+Business Benefit: Users can insert or move multiple nodes in a hierarchy viewpoint at the same time which increases productivity and reduces the effort to make hierarchy changes. 
+
+Huron POV: Before this update, the tool only allowed us to select one node at a time while using the move or insert options, which was time-consuming as users needed to repeat the same steps multiple times if they wanted to insert or move multiple nodes. But now, users can complete inserting or moving multiple nodes in a single go, which reduces the time to complete the task and also helps in increasing productivity and quality. I feel this feature is very useful for all Oracle EDM users. 
+
+ 
+
+KEY RESOURCES 
+
+Inserting Nodes and Related Nodes in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+Moving a Node in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+SAVED FILTERS FOR REQUEST ACTIVITY AND TRANSACTION HISTORY 
+
+User defined filters for request activity and transaction history can be saved for reuse at a later time. Saved filters are private and only available to the user who saved them. These filters are available for selection on the Request Activity or Audit Transaction History screens in the user interface. Saved filters can be edited, saved as new, or deleted as needed. 
+
+Business Benefit: Saved filters enable users to access specific requests or transactions of interest on a repeated basis in a quick and easy manner. 
+
+Huron POV: Here are a few examples that can inspire readers to think of similar use cases: 
+
+Check for departments that do not have managers assigned. 
+
+Which assigned department managers have their employee status changed to something other than active (terminated, long-term leave). 
+
+Query transaction history to identify new values added this month for each segment. 
+
+Identify nodes that have descriptions changed this month. 
+
+Find entities that do not have the intercompany flag set to True. 
+
+Now, users can save their filters in queries and get answers to questions like the ones above without going through filter selection whenever they need to ask the same question. 
+
+KEY RESOURCES 
+
+Working with Request Activity in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+Auditing Transaction History in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+EDM USER functionality UPDATES 
+
+CONFIGURABLE SEVERITY FOR APPLICATION SPECIFIC VALIDATIONS 
+
+Application specific validations now provide severity options to control whether an application rule is enforced as a warning or error in each request workflow stage, when validating a viewpoint, or when exporting a dimension. Warning validations identify data issues to users but allow requests to proceed to the next stage. Error validations identify data issues and prevent the request from proceeding until resolved. An application specific validation can also be ignored for a particular workflow stage, during a viewpoint validate operation, or when exporting a dimension. 
+
+Business Benefit: The configurable severity of a validation allows application rules to be deferred to a later workflow stage or to provide a warning but not restrict submission or approval of a request. 
+
+Huron’s POV: The introduction of severity options in application-specific validations offers User a greater control and flexibility in managing data issues throughout various stages of the workflow. The ability to designate warnings or errors at each request workflow stage, viewpoint validation, or dimension export provides a nuanced approach to handling issues. 
+
+Users now have the capability to identify data issues through warning validations, maintaining the option to proceed to the next stage of a request despite the identified issues. On the other hand, error validations serve as a more stringent measure, preventing requests from advancing until the data issues are rectified. This distinction in severity offers a nuanced approach to handling validation outcomes, aligning with the diverse needs of users and their workflows. 
+
+Furthermore, the option to ignore specific validations at different stages, during viewpoint validation, or when exporting a dimension adds another level of adaptability. The deferring validations to a later stage or providing warnings without restricting submission or approval significantly streamlines the workflow process. Ultimately, improving User's experience in efficiency and autonomy, making the application a more user-friendly and adaptable tool for their specific needs. 
+
+KEY RESOURCES 
+
+Managing Enforcement and Severity of Application-Specific Validations in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+CORESTATS PROPERTY FOR NODE TYPE  
+
+A new system property is available for nodes to identify and output the node type of a node as a property. The CoreStats.Node Type property can be optionally added to any node type and viewpoint which requires it. The property may be displayed as a column in a viewpoint grid/tree or output as a column in an extract. 
+
+Business Benefit: This system property eliminates the need to create a derived property to view and output the node type of a node as a property value. 
+
+Huron POV: The CoreStats property will be a convenient core stats property in EDM as it will eliminate the need to create a new property to derive this. This property could be used in filters or queries to filter the data based on the node type as well.  
+
+KEY RESOURCES 
+
+System and Statistical Properties in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+CUSTOM VALIDATION SEVERITY FOR VIEWPOINT VALIDATE AND DIMENSION EXPORT  
+
+Custom validations provide an additional severity option to control whether a business rule is enforced as an error, warning, or is ignored when validating a viewpoint and exporting a dimension. Warning validations can be used to identify data conditions which may be noteworthy but do not need to be resolved to ensure data integrity. Ignored validations will not run during a viewpoint validate or dimension export operation. Depending on your dimension configuration, when validations are run during a dimension export the export process will proceed if there are warnings but will be prevented if any errors are found. 
+
+Business Benefit: Returning warnings for custom validations makes users aware of potential data issues but does not encourage them to fix the issues. Ignoring custom validations when validating a viewpoint or exporting a dimension can eliminate results for known issues and reduce the time required to complete the operation. 
+
+Huron’s POV:  The introduction of custom validations with severity options brings a nuanced and flexible approach to data management. The ability to designate errors, warnings, or ignored validations during the validation and export processes provides a tailored experience in handling business rules. Users can now strategically choose the severity level based on the significance of data conditions, enhancing their control over data integrity. 
+
+The option to ignore custom validations during validation or export operations proves to be a time-saving feature. Users can streamline their workflow by excluding known issues, ensuring a smoother and more expedited completion of operations. Overall, this enhancement empowers users with greater flexibility, efficiency, and control over their data management processes. 
+
+KEY RESOURCES 
+
+Understanding Validation Severity in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+DOWNLOAD HYPERLINK PROPERTY VALUES TO FILE AS LINKS  
+
+Hyperlink property values for nodes are now output as links when nodes in a viewpoint are downloaded to an Excel file. In previous releases, the values were output in normal text format. 
+
+Business Benefit: After a viewpoint is downloaded to a file, users can directly navigate to the web resources referenced by hyperlink property values using the links in the file. 
+
+Huron’s POV : In the latest release, a significant enhancement has been introduced to improve user experience and data accessibility. Now, when downloading data from a viewpoint to an Excel file, hyperlink property values are transformed into clickable links, providing users with direct access to referenced web resources. This update streamlines data interaction and enhances productivity by enabling seamless navigation to external content from within the Excel file. 
+
+NEW THEMES FOR REDWOOD EXPERIENCE AND COMPACT HEADER 
+
+Three themes are now available in the Redwood Experience for Enterprise Data Management environments: 
+
+Oracle 
+
+Custom Dark 
+
+Custom Light 
+
+The Oracle theme provides a default look and feel for the Redwood Experience. The Custom Light and Custom Dark themes provide additional appearance options to configure your own logo image, home page background image, and brand color. Custom Dark will be used as the theme for customers who have already implemented theme customizations. Customers who have not yet enabled the Redwood Experience will remain on their existing themes. 
+
+This update requires access to Oracle CDN (static.oracle.com), which provides image files, JavaScript, and other static content for the Redwood Experience. 
+
+In addition, the card selection header at the top of the user interface now provides a compact appearance for all themes in Enterprise Data Management. 
+
+Business Benefit: Organizations can customize the look and feel of the Redwood experience using the Custom Light and Custom Dark themes. The compact header provides additional vertical space for content displayed in the user interface. 
+
+Huron POV: Streamlined appearance and selectable display create a customized user experience tailored to each individual’s preference. Additionally, clients can better visually identify different environments and customize their appearance for business needs. 
+
+KEY RESOURCES 
+
+Customing Your Users' Display in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+QUERY ORPHAN NODES FOR HIERARCHY VIEWPOINTS  
+
+Viewpoint queries can be used to identify nodes of particular node types that have not been included in the hierarchy set for a viewpoint. An Orphan Nodes query scope is available to determine which nodes have been excluded and may potentially need to be inserted into the viewpoint. Additional filters can be specified for an orphan nodes query to reduce the results to particular orphans of interest. Nodes from orphan query results can be inserted into the hierarchy viewpoint using drag-and-drop or the node selector dialog when in the context of a request. 
+
+Business Benefit: Orphan node queries can be used to ensure nodes of specific node types are included in a hierarchy viewpoint for reconciliation purposes. They also provide a way to identify nodes which may have been indirectly removed from a hierarchy and need to be re-inserted for completeness reasons. 
+
+Huron POV: Before this update, creating a new list viewpoint was necessary to locate orphan nodes, increasing the effort required to find them. Now with this new update using viewpoint queries helps find nodes missing from a hierarchy. Orphan node queries spot left-out nodes, ensuring the hierarchy is complete and accurate. Adding these nodes into the hierarchy makes checking easier and more accurate. 
+
+KEY RESOURCES 
+
+Creating, Running, and Saving Viewpoint Queries in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+SIMILAR TO AND IS NOT BLANK OPERATORS FOR VIEWPOINT QUERIES 
+
+Additional query operators are available to perform new types of analyses using a viewpoint query. The Similar To operator performs a fuzzy match on node properties with the String, Memo, Numeric String, or Sequence data type. A fuzzy match may include up to two characters difference anywhere in the property value. A prefix length can be specified to limit the fuzzy match to the end of a string value. The Is Not Blank operator can be used to identify nodes which have a property value that is not blank. 
+
+Business Benefit: Viewpoint queries can use the Similar To operator to identify nodes with property values that are similar but not an exact match. This includes misspellings, past vs. present tense, plural vs. singular, possessive vs. non-possessive, hyphenation, within vs. without parenthesis, and much more. The Is Not Blank operator allows for identification of nodes which have a non-blank value for one or more properties. 
+
+Huron POV: The introduction of fuzzy search options is particularly valuable as it addresses a common need in many of our daily activities. This fuzzy matching capability allows users to identify relevant data even when there are slight discrepancies or variations in the property values. Even the 'Is Not Blank' option fulfills a fundamental requirement for all EDM users in their daily tasks. The "Is Not Blank" operator addresses a common requirement in data analysis by enabling users to easily identify nodes with non-empty property values. These new query operators not only enhance the analytical capabilities of Oracle EDM but also contribute to improving productivity and accuracy in data analysis tasks. 
+
+ 
+
+KEY RESOURCES 
+
+Creating, Running, and Saving Viewpoint Queries in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+EDM INTEGRATION UPDATES 
+
+ 
+
+COPY EXTRACT PACKAGES AND PUBLISH AS REPORT 
+
+Extract packages for applications can be copied by application owners to create new packages based on the definition of an existing package. This provides an easy method to setup a different extract package which has many of the same extracts and uses the same configuration options as another package. 
+
+An Extract Packages report is also available to enable business users to run extract packages and download the results in a self-service manner. Extract packages can be filtered by a selected application. Users must have read access or greater to the viewpoints used by the extracts in a package in order to run the package. 
+
+Business Benefit: Copying an extract package enables new extract packages which are similar to other existing packages to be quickly setup. The Extract Packages report provides visibility to extract packages across all applications and allows business users with the appropriate access to run them. 
+
+Huron POV: By duplicating an extract package, users can expedite the setup process for new packages that share similarities with existing ones. This functionality streamlines operations, enhances efficiency (saving development time which saves money) within the organization and promotes standardization across packages. 
+
+KEY RESOURCES 
+
+Creating, Editing, Copying, and Deleting Extract Packages in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+Extracts Reports in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+INCREMENTAL EXTRACT OPTIONS FOR PROPERTY COMPARE AND OUTPUT 
+
+Incremental extracts provide additional options to control which properties are checked for differences and whether a property is output in the extract results. The Compare and Output options for extract columns can be configured for incremental extracts where property updates are included in the results of the extract. 
+
+Business Benefit: These options enable an incremental extract to produce results based on differences in a specific property but not include that property as a column in the extract output, or to include a property in the incremental extract output but not base the results on a difference in that property. 
+
+Huron POV: This enhancement introduces a filter option based on a properties transaction, eliminating the previous requirement of including properties as part of the extract. Prior to this improvement, creating a truly customized incremental extract posed challenges due to mandatory output of the columns that we wanted to compare. For instance, if you sought to extract changes based on last modified date, inclusion of this date in the output was mandatory. However, if the downstream system didn't need this column, an additional process was required to remove the column. This enhancement streamlines the incremental extraction process, enabling the creation of a more refined custom extracts tailored for seamless interaction with EDM. 
+
+KEY RESOURCES 
+
+Selecting Extract Columns in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+REST API ENHANCEMENTS  
+
+The Enterprise Data Management REST API provides a new endpoint to run a specified extract package for an application. The extract package output can be written to a zip file in the staging area or a global connection. 
+
+In addition, the following REST API endpoints have been enhanced to allow modification of the Subfolder parameter for Oracle Object Storage global connections: 
+
+Update Global Connection 
+
+Update Global Connection for Extract 
+
+Business Benefit: Extract packages can be run in an automated manner and a subfolder can be configured for Oracle Object Storage global connections and extracts using the REST API. 
+
+Huron POV: The ability to run an extract package in REST API will be helpful when there is a use case to combine extracts into one package or file which is required for some newer target applications like PBSMC, the cloud version of OFSAA. The ability to update global connection and global connection for extract will allow for more versatility in the types of target systems that automation is made for. 
+
+KEY RESOURCES 
+
+Run an Extract Package in REST API for Oracle Enterprise Data Management Cloud Service 
+
+Update a Global Connection in REST API for Oracle Enterprise Data Management Cloud Service 
+
+Update a Global Connection for an Extract in REST API for Oracle Enterprise Data Management Cloud Service 
+
+SPECIFY ADDITIONAL RUNTIME PARAMETERS FOR EXTRACTS  
+
+Additional runtime parameters can be specified when running a full, incremental, or generational extract. For Incremental extracts, the From Time and To Time parameters can now be specified at run time when running the extract from either the Applications-Extract screen or the Viewpoint Extracts report. For all extracts run from the Viewpoint Extracts report, you can now specify the name of the file to be output. 
+
+Business Benefit: These runtime parameters allow users to specify values which are different than those pre-configured in an extract profile in order to produce different results each time they run the extract. 
+
+Huron’s POV: The introduction of additional runtime parameters for full, incremental, or generational extracts is a step forward in enhancing flexibility and customization within extract processes. The ability to specify parameters such as From Time and To Time during incremental extracts, and the option to designate the output file name for all extracts run from the Viewpoint Extracts report, provides users with newfound control and adaptability. This flexibility allows us to generate varied outcomes from the same extract process without being confined to pre-configured settings within extract profiles. 
+
+KEY RESOURCES 
+
+Running Extracts in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+EDM Administration UPDATES 
+
+APPLICATION SPECIFIC VALIDATION ON READ PERMISSION FOR OWNERSHIP APPROVERS  
+
+An application specific validation is available for nodes in a viewpoint to verify whether an ownership approval property for a node refers to a user who has at least Participant permission with Read access. The Ownership Approval Permission validation is disabled by default but can be enabled for any dimension which uses a workflow policy configured with the Ownership approval method. 
+
+Business Benefit: This validation ensures that users who are specified as node owners in a viewpoint have the necessary permission to approve requests for changes made to those nodes. 
+
+Huron POV: Introduction of application-specific validation for node ownership approval enhances data governance. This feature ensures that designated node owners have the necessary permissions to approve changes, strengthening data integrity and accountability. By enabling validation for any dimension with an Ownership approval method, it provides adaptable control to align with organizational workflows. This streamlines approval processes, mitigates risks, and enhances operational efficiency, ultimately fostering trust in the platform's governance capabilities. 
+
+KEY RESOURCES 
+
+Understanding Ownership Approvals in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+AUDIT CONFIGURATION CHANGES TO PROPERTIES  
+
+Changes to property definitions can be audited to review and monitor the configuration of properties over time. The Properties tab of the Audit page displays changes to properties for all applications and node types. You can filter the property audit results using a selected property or specified time frame, and the results can be downloaded to a file for offline reference purposes. 
+
+Business Benefit: Auditing properties enables application owners and Service Administrators to identify changes to property definitions for governance and compliance reasons. 
+
+Huron POV: This addition fills a crucial gap in the audit capabilities within EDM, addressing a longstanding need within EDM. It plays a vital role in providing comprehensive governance oversight within the application, aligning with the requirements often posed by auditors. 
+
+One significant area where this feature proves invaluable is in tracking changes to business logic within the EDM. As an owner of processes, it's essential to monitor the frequency of these changes and ensure they adhere to proper Software Development Life Cycle (SDLC) processes. This entails verifying that changes receive the necessary approvals, thus maintaining compliance and governance standards. With this capability, you gain visibility into the evolution of business logic, facilitating informed decision-making and ensuring regulatory compliance. 
+
+KEY RESOURCES 
+
+Auditing Properties in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+CHANGES TO WORKFLOW POLICIES PERIODICALLY APPLIED TO IN FLIGHT REQUESTS 
+
+Approval and commit policies which are currently in effect for In Flight requests are re-evaluated every 15 minutes, and policy changes which affect the invitees for the requests are applied. Policy users who have not been invited to approve or commit the request will be added to the request and users who were already invited to a request will be removed if no longer included in a policy. In previous releases, changes to a policy were only reflected for In Flight requests once per day. 
+
+Business Benefit: Application and dimension owners can make changes to workflow policy users and have those changes take effect on active requests in a short term fashion. 
+
+Huron POV: Before, changes to approval and commit rules for ongoing requests were only applied once a day. Now, they're checked every 15 minutes, making adjustments happen quickly. This is super helpful because it means if someone needs to be added to a request or taken off, it's done right away. So, as someone managing applications and dimensions, we can make sure things are running smoothly without any delays, which is great for keeping everything on track and efficient. 
+
+DELETE MAP BINDINGS FOR BOUND DIMENSIONS 
+
+Map bindings that are no longer used or were created unintentionally for a bound dimension can now be deleted. When a map binding is deleted, the data chain objects associated with the binding remain in the dimension and their binding status is updated. Deletion of a binding is available for the following application types: 
+
+Enterprise Profitability and Cost Management 
+
+Financials Cloud General Ledger 
+
+Financial Consolidation and Close 
+
+Freeform 
+
+Planning and Planning Modules 
+
+Universal 
+
+Business Benefit: Map bindings that have become obsolete can be removed from a dimension, and the mapping viewpoints can be archived or deleted from views where they exist. 
+
+Huron POV: A good feature which will help towards cleaning up the EDM application especially with obsolete map bindings. Now you will be able to delete the map bindings and not just archive it for any application type. 
+
+KEY RESOURCES 
+
+Creating and Deleting a Map Binding in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+DIMENSION LEVEL BLOCKOUT PERIOD SETTINGS  
+
+A blockout period can be enabled or disabled for an individual dimension of an application. When a blockout period is configured at the application level, the blockout settings will cascade to all of its dimensions, and the settings can be overridden at the dimension level if necessary. Viewpoints can use a blockout period set up at either the application or dimension level, but not both. The Viewpoint inspector will identify whether an active blockout comes from its application or dimension. 
+
+Business Benefit: Blockout periods configured at the dimension level enable blockouts to only affect requests for specific dimensions or allow requests for different dimensions to use different blockout settings. 
+
+Huron’s POV: This enhancement enables more granular control over Blockout periods, ensuring its effectiveness in targeting specific dimensions as required. One of the key benefits of configuring Blockout periods at the dimension level is that it enables users to tailor Blockouts to specific dimensions. This setup provides precise control over when requests for specific dimensions are influenced by Blockout periods, offering flexibility in managing various dimension requirements and controlling actions accordingly. If needed Blockout can be disabled for the Dimension individually vs disabling at an application Level. 
+
+KEY RESOURCES 
+
+Understanding Blockout Periods in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+DISABLE REQUEST WORKFLOW FOR APPLICATIONS  
+
+Workflow can be temporarily disabled for any requests submitted for a particular application or for requests submitted by specified users. The Disable Workflow option can be set for a given application to allow submitted requests to ignore any active workflow policies configured at the application, dimension, node type, or hierarchy set level. This option is intended for limited use in a test environment and is not included in templates used to migrate applications across environments. 
+
+Business Benefit: Exceptional changes and data adjustments can be made by application owners after workflow policies have been configured without the requests having to go through approval and commit workflow or the policies needing to be disabled and then re-enabled again. 
+
+Huron’s POV: This feature gives Users the ability to temporarily disable workflow for specific requests within an application bringing significant flexibility and efficiency. This feature allows users to bypass the usual approval and commit workflow, streamlining the process of making exceptional changes and data adjustments. Application owners can exercise control over their applications, even after workflow policies have been configured, without the constraints of traditional approval procedures. 
+
+The disabled Workflow option proves especially valuable in test environments, providing a seamless way to test and implement changes without being bound by strict workflow protocols. This feature empowers users to navigate their applications dynamically, ensuring that necessary adjustments can be made promptly without unnecessary delays or complications. 
+
+KEY RESOURCES 
+
+Disabling Workflow for Applications in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+EDIT AND CLEAR LAST VALUE FOR SEQUENCE PROPERTIES 
+
+Application owners can edit or clear the last used value for a Sequence data type property for a selected application. When the last sequence value is edited, the next sequence value assigned to a node in the application will be the edited value plus the specified step value for the property. If the last sequence value is reset, the next value assigned to a node will be the specified starting value plus the step value. 
+
+Business Benefit: Editing or clearing the last used sequence value may be necessary in cases where nodes need to be re-imported and sequence values need to be reassigned, or defined values have been loaded from an external source into a sequence property for existing nodes and new sequence values need to be assigned when nodes are added directly to Enterprise Data Management. 
+
+Huron’s POV: The sequence properties now provide the ability to reset their numbering. The property definition now displays a “Last Value” parameter which tells us the last sequence number generated. The next number that will be generated will be “Last Value” +1. This “Last Value” can be cleared or can be set to a specific value to adjust the sequence to a desired appropriate value. 
+
+KEY RESOURCES 
+
+Viewing, Editing, and Resetting Sequence Values in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+EXCLUDE ARCHIVED OBJECTS DURING TEMPLATE IMPORT  
+
+When importing a template file, you can prevent archived objects in the template from being imported into a target Enterprise Data Management environment if the objects are not already present. An Exclude Archived Objects option is available for template preview and import to control whether archived objects in the template will be created in the target environment. For objects which are depend on an archived object, those dependent objects will also be excluded from the template import if they do not exist in the target environment. In cases where a dependent object would be partially excluded, the object will appear in the template preview and import with a warning message indicating it cannot be imported. 
+
+Business Benefit: Archived objects that were created for an application or dimension in a source environment but are not needed in a target environment can be excluded during a template import process to ensure those objects are not migrated. 
+
+Huron POV: Previously, when importing a template file, archived objects were imported into the target environment even if they weren't needed. Now, with the option to exclude archived objects during import, unnecessary items can be left out, it helps keep the target environment clean and avoids unnecessary complexity with objects that aren't necessary. This feature especially useful because it streamlines the import process and ensures we only bring in what we need, making everything more organized and efficient. 
+
+ 
+
+KEY RESOURCES 
+
+Working with Templates in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+OPTIONS TO SELECT ALL TRIGGER ACTIONS AND PROPERTIES FOR CUSTOM VALIDATIONS 
+
+Custom validations provide additional options to select all actions for the Trigger Actions parameter and all properties for the Trigger Properties parameter. The All option provides an efficient way to configure those parameters when all actions or properties need to be selected for a validation. 
+
+Business Benefit: In cases where a custom validation needs to be enforced for all node actions and/or all property updates, the All option provides an easy method for configuring the validation. 
+
+KEY RESOURCES 
+
+Working with Custom Validations in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+PARENT TRANSFORM FOR TOP NODES IN SOURCE VIEWPOINTS 
+
+Parent transformations in node type converters are now run for top nodes in source hierarchy viewpoints when request items for a subscription request are generated. This enables top nodes which were added in a source viewpoint to be placed under a different parent in a target hierarchy viewpoint. In previous releases, parent transformations were not run for top nodes in source viewpoints and the nodes were synchronized as top nodes to the target viewpoint. 
+
+Business Benefit: Top nodes added to a source viewpoint can be placed under a parent in a target viewpoint when synchronized using a subscription request. 
+
+Huron POV: Before, Parent transformations weren't applied to top nodes in source hierarchy viewpoints, leading new top nodes to sync as top nodes in the target viewpoint. Now, with this update, top nodes added in the source can be correctly placed under a parent node in the target Viewpoint. 
+
+KEY RESOURCES 
+
+Creating, Editing, and Validating Subscriptions in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+PROPERTY SUBTYPE INCLUDED IN DOWNLOAD TO FILE  
+
+The Subtype parameter for String and Node data type properties is now included when downloading property definitions to a file. A Subtype column has been added to the Properties tab of the file to determine the subtype of each property. 
+
+Business Benefit: When reviewing a property download file, you can identify whether a particular String data type property uses the Hyperlink or Email subtype and when a Node data type property uses the User subtype. 
+
+Huron POV: This enables you to download and identify whether a particular String data type property uses the Hyperlink or Email subtype and when a Node data type property uses the User subtype. 
+
+KEY RESOURCES 
+
+Downloading Property Definitions in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+RECURRING BLOCKOUT PERIODS FOR APPLICATIONS AND DIMENSIONS 
+
+Recurring blockout periods can be configured for applications and dimensions to enforce blockouts on a repeated basis without the need to reconfigure the blockout settings each time period. A recurring blockout can be based on a Gregorian calendar period or a fiscal calendar period. Recurring blockout periods work similarly to specified blockout periods in that requests are blocked from completing during a particular span of time and certain types of users may be excluded from the blockout if necessary. 
+
+Business Benefit: Organizations can prevent periodic changes to enterprise data on a recurring basis to support business processes such as a financial month-end close. 
+
+Huron POV: This enhancement enables block out settings on a recurring basis, based on the period that we specify which helps in setting up blockout time for applications without the need to reconfigure the blockout settings each time. 
+
+Note:  
+
+When blockout periods are configured at both the application and dimension level, the dimension blockout settings generally override the application settings. 
+
+For requests that contain request items from different applications or dimensions, if any application or dimension in the request is currently in a blockout period the entire request is blocked. 
+
+ 
+
+KEY RESOURCES 
+
+Configuring Blockout Periods in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+REQUEST ACTIONS FOR NODES IN EXPRESSIONS  
+
+An Actions collection is available for a Node object in an expression to evaluate the request actions for a particular node in a request. This collection can be used in expressions for custom validations, policy filters, and subscription filters. Request actions can be accessed for related nodes in a hierarchy viewpoint including parents, children, ancestors, and siblings of a node. Each request action includes the action type, the viewpoint where the action was taken, and the user who was responsible. The following methods and attributes are available for the Actions collection: 
+
+Any 
+
+Count 
+
+Find 
+
+Get 
+
+IsEmpty 
+
+Size 
+
+Business Benefit: Some validations, subscriptions, and policies need to perform conditional logic based on certain types of changes that were made, where they happened, and who made them. Examples include: 
+
+A custom validation which ensures that when one property is updated, another property is also updated. 
+
+A workflow policy which only takes effect if a specific group of users perform certain actions on particular nodes in a viewpoint. 
+
+Huron POV: Now Admins no need of restricting access at Application/ Dimension/ Node/ Hierarchy level using this new update We can restrict access using simple validation expressions. Before this update, we didn't have a straightforward way to evaluate specific actions taken on nodes in requests for custom validations or policy filters. Now, with the Actions collection, we can easily access and analyze request actions for individual nodes, like updates made by certain users in specific viewpoints. This is incredibly useful for setting up custom validations ensuring data integrity or implementing workflow policies based. 
+
+KEY RESOURCES 
+
+Node Data Type in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+SELECT MULTIPLE TOP NODES FOR A VIEWPOINT SUBSCRIPTION FILTER  
+
+When defining an Included Top Nodes filter for a viewpoint subscription, multiple nodes can be selected at the same time rather than having to select each top node separately. In cases where several nodes need to be selected, this can significantly reduce the effort required to configure the filter for the subscription. 
+
+Business Benefit: For viewpoint subscriptions which are filtered using many top nodes, the ability to multi-select those top nodes provides an efficient way to configure the subscription filter. 
+
+Huron’s POV: The recent update introducing the ability to select multiple top nodes when defining an “Included Top Nodes” filter for viewpoint subscriptions is a welcome improvement that enhances efficiency and user experience. Previously, the process of individually selecting each node one by one was not only time-consuming but also somewhat cumbersome. However, with the introduction of multi-select functionality, this issue has been effectively addressed. Now, users can simply select multiple nodes at once, streamlining the configuration process and eliminating the need for repetitive selections. 
+
+KEY RESOURCES 
+
+Filtering by Top Node in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+TARGET NODE SET IN CALCULATED PARENT EXPRESSIONS  
+
+Node set information is accessible within a calculated parent expression to allow for conditional logic based on the node set of a node being added or inserted into a hierarchy viewpoint. The Node Set attribute on the Node object in the expression can be used to identify the node set of the target node. 
+
+Business Benefit: This enables an expression to calculate different parents for target hierarchy viewpoints which use different node sets when nodes are added or inserted during a request file load or via a subscription request. 
+
+Huron’s POV: This feature provides more flexibility in calculated parent expressions as now you can calculate based on the node set being added or inserted into the target hierarchy viewpoint. Additional flexibility and logic on calculated parent expressions open the opportunity to handle more business scenarios. 
+
+KEY RESOURCES 
+
+Node Data Type in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+TRACK METADATA CREATION AND DELETION IN SYSTEM EVENT AUDIT  
+
+Events for the creation and deletion of metadata objects are now tracked in the system event log and can be reviewed from the Audit System Events screen in the user interface. Audit results can be filtered by the Metadata event category and a selected object type. 
+
+Create and delete events are recorded for the following metadata objects: 
+
+Applications and dimensions 
+
+Constraints and custom validations 
+
+Node types, hierarchy sets, node sets, and lookup sets 
+
+Permissions, policies, and properties 
+
+Views and viewpoints 
+
+Business Benefit: Application owners and Service Administrators can identify metadata objects that have been created and deleted in a certain time frame along with who was responsible for them. 
+
+Huron’s POV: While object changes should not surprise owners and admins of well-managed applications, now they can use a system-tracked audit trail to document object updates better. These features can help organizational admins track object creation or deletion activity while developing new use cases and extending their EDM applications or reporting monthly admin/developer activity.  
+
+KEY RESOURCES 
+
+Auditing System Events in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
