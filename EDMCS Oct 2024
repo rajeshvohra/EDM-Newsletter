@@ -1,0 +1,510 @@
+ 
+
+The newest update for Enterprise Data Management (EDM) has been released to test environments on Friday, October 4th and it includes 18 new features including the revolutionary Merge and Match feature.  This patch enhances the EDM experience for both end users and administrators/developers and brings in some new exciting functionality; This patch amplifies the scalability of the EDM platform. This will be available in production on Oct 18th, 2024. 
+
+ 
+
+The EDM patch notes below will provide a detailed summary from Oracle and our team’s tips on each update (marked Huron POV) that will provide you with additional insights the true value of the feature in the real-world beyond what is available in Oracle documentation. 
+
+ 
+
+We classified all updates into 3 groups: 
+
+User Functionality Updates 
+
+Integration Updates 
+
+Administration Updates 
+
+ 
+
+Below are the updates from the 24.10 patch that are highlighted as editors’ picks: 
+
+MERGE and MATCH FEATURE 
+
+DATA SOURCES FOR MATCHING, MERGING and LINKING NODES 
+
+MATCHING RULES FOR NODE TYPE BY DATA SOURCE 
+
+Survivorship rules for node type by data source 
+
+MATCH and merge request items to existing nodes in viewpoints 
+
+ 
+
+Property groups for nodes in viewpoints 
+
+ 
+
+ 
+
+We recommend that your review all 24.10 EDM updates and if you have any questions on the features below or on your EDM implementation, please contact us at EDM_Huron@hcg.com. 
+
+ 
+
+ 
+
+Source:  
+
+ 
+
+ 
+
+EDitor’s PIcks 
+
+Data Sources for Matching, Merging, and Linking Nodes 
+
+ 
+
+Data sources enable nodes from different business applications to be matched, merged, and linked for mastering purposes.  A registered data source is automatically created for each application in Enterprise Data Management.  Unregistered data sources can be set up for other external systems and files from which data is loaded.  An optional Data Source column in the request file format is used to identify the Data Source for each request item that is loaded.  A Default Data Source can be configured in a viewpoint load profile to load data from a particular source. 
+
+ 
+
+Business Benefit: Nodes from different data sources can be matched and merged to create master records and linked to provide traceability of information from source systems to target applications. 
+
+ 
+
+Huron POV: A new feature as part of the Match and Merge process, we now have “Data Sources” in our Tools section. Data sources represent logical source system for nodes. The primary use of data source is to help identify which matching rules to use when matching request items. When you create request items that you want to match on, the data sources you assign to them determine the matching rules that are used for the match. 
+
+ 
+
+There are two types of data sources: 
+
+Registered data sources represent other Oracle Enterprise Data Management Cloud applications. They are created automatically when you register an application in Oracle Enterprise Data Management Cloud. 
+
+Unregistered data sources are manually created to represent other external systems and files that you want to bring data in from. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Key Resources 
+
+Understanding Data Sources in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+Matching Rules for Node Types By Data Source 
+
+Matching rules can be defined for node types which have nodes coming from other data sources that need to be matched with existing nodes based on their property values.  Each matching rule is configured for a particular data source and the rule's criteria are based on the properties of the node type.  Multiple rules can be defined for a node type and data source and each matching rule is assigned a Rule Order which controls the order in which match results are returned.  Matching rules can evaluate the Name property or any other indexed property and may use one or more rule criteria.  String data type properties support Equals, Contains, or Similar To (fuzzy) types of matches.  Integer, Float, Date, and Timestamp properties can be matched using Equals, Greater Than, Less Than, or Between logic. 
+
+Business Benefit: Matching rules allow data records with different identifiers from multiple data sources to be matched based on similar property values. 
+
+Huron POV: Matching rules control how nodes are matched from an incoming data source to nodes that already exist in a viewpoint when the nodes are named differently. Instead of an exact match on the node name, you can create matches based on other properties and match types. 
+
+Matching rules are created at the node type level. You can define multiple rules for a node type, and you can specify the order in which the rules are evaluated 
+
+ 
+
+By default, when you bring in nodes the system performs an exact match name on the Name property (including any node type qualifiers and alternate names) to determine whether the incoming node is the same as an existing node. Matching rules enable you to specify other properties and match types to determine whether the nodes are the same. 
+
+ 
+
+ 
+
+ 
+
+Key Resources 
+
+Creating, Editing, and Deleting Matching Rules in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+Survivorship Rules for Node Types By Data Source 
+
+Survivorship rules can be set up for node types that have matched nodes coming from different data sources which need to be merged together to create master nodes and prevent the existence of duplicate nodes.  A single survivorship rule may be enabled for each node type and data source.  The survivorship rule is configured with Properties to Merge to control how property values are merged from the data source records to the existing nodes they were matched to. 
+
+Business Benefit: Survivorship rules allow data records from multiple data sources that were matched together to be merged into combined nodes with property values and relationships from all sources. 
+
+Huron POV:  While matching rules determine which incoming nodes might match existing nodes, survivorship rules specify which properties and relationships from the incoming source node get merged into the target nodes in a viewpoint after the match has been confirmed. The Definition tab of the survivorship rule inspector lists all of the properties in a node type, and for each property you can choose to either copy the property value to the target node or ignore it during the merge process. 
+
+You can create survivorship rules for unregistered data sources only. For registered data sources, use the node type converter on the target node type to determine which properties get copied from the source nodes 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Key Resources 
+
+Creating, Editing, and Deleting Survivorship Rules in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+Match and Merge Request Items to Existing Nodes in Viewpoints 
+
+Request items coming from different data sources can be matched to existing nodes in a node type using matching rules and merged into combined nodes using survivorship rules.  Matching can be performed by data managers on requests that have request items from one or more data sources.  A matching operation is performed for a selected node type and data source.  Each matching operation returns a single match result set which identifies match candidates for each request item and a comparison of property values between the incoming request items and the match candidates.  Accepted match results will result in a merge of the request item and the match candidate node.  Match results which are rejected will keep the request item as a separate node to be added to the node type.  Skipped request items can be re-matched and evaluated again at a later time.  Once accepted matches are applied to a request, the request items for the merged nodes are replaced with items for the matching node.  Data source and original name information for the merged nodes can be viewed in the request inspector. 
+
+ 
+
+Business Benefit: Matching allows incoming data records from multiple data sources to be matched and merged together based on predefined rules and user review to create master nodes and prevent duplicate nodes. 
+
+ 
+
+Huron POV: An extremely powerful feature, which would change how EDM is being used. Matching and merging refers to the process of comparing incoming nodes to existing nodes and identifying nodes that are the same, and then merging in the results. Once the confirmation is done that a record from a particular data source is a match to an existing node in specific node type, the system stores information about that match so that the next time you bring data in from that data source, the incoming node is automatically matched to the existing node. 
+
+ 
+
+There are two main uses cases for matching and merging nodes: 
+
+ 
+
+Matching and merging multiple records with different identifiers from the same data source. 
+
+For example, suppose you have an existing entity node with the name Oracle Incorporated, and you are merging in a file with a node name Oracle Inc. If you were to submit the request without matching, the Oracle Inc. node would be added as a new node because there isn't an exact match on the existing node name. But by setting up matching rules and reviewing the match results, you can specify that the incoming node is a match for the existing node. That way, when the request is processed instead of adding a new node the incoming node is merged with the existing node. 
+
+ 
+
+Matching and merging multiple records with different identifiers across multiple data sources. 
+
+For example, let's say you have a customer record, and you have multiple data sources that each contain different information about that customer. You might get credit card information for that customer from a point-of-sale device, and biographical information such as a name and email address from an online ordering system. If you were to submit a request to merge the records from these two data sources together, you would get two different customer records, each with different information about that customer. 
+
+With matching, you can set up a match rule that looks at, for example, the credit card number to match the two records. Then, when you merge the data sources together, you can use the matching workbench to confirm that the two records are a match, and thus create a master record for that customer with all the information from both data sources. 
+
+ 
+
+ 
+match result screen with sections described below 
+
+ 
+
+Key Resources 
+
+Matching and Merging Request Items in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+Property Groups for Nodes in Viewpoints 
+
+Property groups enable properties to be organized into groups for easy access when viewing and editing properties of selected nodes in viewpoints.  The properties of a selected node can be filtered to a specific property group on the Properties tab of a displayed viewpoint.  Properties are assigned to groups at the viewpoint level and may be placed in multiple groups if necessary.  Property groups can be shared across multiple viewpoints in the same view.  Property group assignments can be imported from a file for quick setup and exported to a file to make bulk changes. 
+
+ 
+
+Business Benefit: Users can efficiently view and modify property values for nodes in viewpoints which have a large number of properties. 
+
+ 
+
+Huron POV: 
+
+This feature is something that existed in Oracle’s Legacy DRM application and will be useful in organizing viewpoints with many properties for users who are only concerned with a small subset of the properties. These property groups are view specific so they should be created in the maintenance views where users are spending the most time.  
+
+ 
+
+Another cool part of this feature is that now we can see the number of properties which are part of the group. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Key Resources 
+
+Creating, Editing, and Deleting Property Groups in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+ 
+
+EDM USER functionality UPDATES 
+
+ 
+
+Access Policy Group Details in Policy Audit 
+
+ 
+
+User and group details are now displayed in the Policy Group column on the Audit Policies screen of the user interface instead of only an indicator that the information had changed.  For policies which have many users or groups, you can view the policy group details in a separate popup dialog.  In previous releases, policy group details were only available when downloading policy audit information to a file. 
+
+ 
+
+Business Benefit: Users can identify specific changes to users and groups of policies without needing to download policy audit information to an external file. 
+
+ 
+
+Huron POV: With this enhancement on Audit report, users can now view comprehensive user and group data in the Audit Policies window Policy Group column instead of merely seeing a change indicator. A second popup dialog lets users access comprehensive policy group information for policies with many users or groups. The only way to access this data in the past was to download policy audit data to an external file. Instead of exporting the data, users can now easily spot changes made to users and groups within policies. 
+
+ 
+
+ 
+
+Key Resources 
+
+Auditing Policies in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+Delegate Request Approvals and Commits While out of Office  
+
+ 
+
+Users who are approvers or committers of requests can delegate that responsibility to another user who has similar data access when the original user is out of office.  When an approver/committer turns on the Out of Office user preference, they have the option to select a Delegate user who is expected to approve or commit any requests on their behalf.  The delegate user should have at least Participant-Read access to the data that they need to approve or commit and Participant-Write data access if the delegate needs to enrich a request during approval.  The original user remains invited to any requests they would normally approve or commit to provide visibility to those requests and allow them to take action remotely if necessary. 
+
+ 
+
+Business Benefit: Requests that need to be approved or committed can proceed through a governance workflow in a timely manner by involving other users who are available to participate. 
+
+ 
+
+Huron POV: This is a welcomed enhancement for OOO functionality in EDM. Now users will have the ability to select a specific user to delegate their responsibility when out of the office. This differs from utilizing alternate assignees where the primary assignee would no longer receive the request. Moving forward, both the OOO user and delegate will have the ability to approve/commit requests which increases the ease of remote work and flexibility of collaboration. 
+
+ 
+
+ 
+
+Key Resources 
+
+Understanding Request Delegation in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Improved Request Processing for Updating Nodes with Calculated Names 
+
+ 
+
+Nodes with calculated names can be updated, inserted, or moved in a viewpoint during a request file load or when generating a subscription request.  This allows changes from another source to be properly applied to existing nodes whose name is calculated based on other properties of the node.  In previous releases, nodes with calculated names could be added to a viewpoint, but in order to update them you needed to explicitly specify the node name. 
+
+ 
+
+Business Benefit: Subsequent updates to existing nodes with calculated names coming from a request file load or a subscription request can be processed accordingly. 
+
+ 
+
+Huron POV: This enhancement ensures that any updates to nodes with calculated names that come from a request file load, or a subscription request are handled correctly. It is now possible to move, add, or update nodes with calculated names inside a viewpoint while a request file is loading or when a subscription request is built. This ensures that existing nodes with names derived from other node properties get updates from an external source correctly.  
+
+ 
+
+ 
+
+ 
+
+Key Resources 
+
+Calculating and Storing the Name of a Node in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+Invited Approvers and Committers Included as Contributors to Requests  
+
+ 
+
+Users invited to approve and commit requests are recorded in request history to allow the users to access these requests at a later time even if they never participated in the request during the Approve or Commit workflow stage.  The requests will be accessible for these users from the Request Activity page using the My Activity = Contributed filter once they are no longer invited to approve or commit.  The History tab of the request inspector can be used to identify the users who were invited but may have never taken action on the request. 
+
+ 
+
+Business Benefit: Users who were invited to approve or commit requests retain visibility to the requests once they are no longer an invitee regardless of whether they participated. 
+
+ 
+
+Huron POV: This enhancement improves visibility for invited approvers and committers, even if they do not take any action during the approval or commit stages. These users will automatically be listed as contributors in the request history tab, allowing them to access and review requests later. This increases transparency, facilitates better request tracking, and enhances overall accountability, ensuring that all participants can easily reference previous requests. 
+
+ 
+
+Key Resources 
+
+Working with Request Activity in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+Node Links to Visualize Lineage from Sources to Targets  
+
+ 
+
+Node links are established between source nodes and target nodes based on a match and merge of request items or via a subscription request.  A node link may reference a source node in a registered or unregistered data source.  The Links tab for a viewpoint in an opened view provides a node lineage which allows for visualization of links for a selected node from all data sources to all target applications. 
+
+Business Benefit: Node links identify relationships between different nodes across multiple business applications to enable users to understand how changes to one application may affect another. 
+
+ 
+
+Huron POV: The Node Links feature helps business users see how data is connected across different applications, making it easier to understand how changes in one system affect others. By showing a clear path of the data, it improves transparency, makes it easier to analyze the impact of changes, and supports better decision-making. This helps users manage data changes between applications more easily, improving teamwork and ensuring proper data management. 
+
+ 
+
+Key Resources 
+
+Viewing Node Links in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+Policy Group Filter and Column Improvements for Policy Listing Report 
+
+ 
+
+The Policy Listing report has been enhanced to provide better filtering and visibility of users in policy groups.  The following improvements were made: 
+
+When filtering the report by a user, the report includes policies where the user is a member of a group assigned to the policy 
+
+The Policy Group column provides an option to view the users within a group assigned to a policy 
+
+Business Benefit: The Policy Listing report provides enhanced reporting for workflow policies that have user groups assigned to them. 
+
+ 
+
+Huron POV: This update will provide quality of life improvements for the admins and developers while viewing the Policy Listing report. It should make it easier to investigate which users are in which groups while viewing the report. If admins need to see what a specific user has access to, they can filter through this much easier now. This will be a good functionality to show client admins, as they will be likely to want to monitor the user group control in EDM. 
+
+ 
+
+Key Resources 
+
+Permissions and Policies Reports in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+ 
+
+EDM INTEGRATION UPDATES 
+
+Defined Viewpoint Loads for Application Dimensions 
+
+Data and metadata managers can define reusable load profiles for viewpoints of application dimensions to load nodes, properties, and relationships from an external source on a recurring basis.  Viewpoint load profiles can be preconfigured with customized file format and processing options.  Defined viewpoint loads are run from the Applications-Load page in the web interface.  A REST API endpoint is available to run a defined viewpoint load profile in an automated fashion from a file uploaded to the staging area. 
+
+ 
+
+Business Benefit: Defined viewpoint load profiles can be tailored to load data into viewpoints from specific external sources and process the data accordingly.  Options include custom file delimiters, expanding allowed values for properties, data sources for matching, and handling node deletions. 
+
+ 
+
+Huron POV: Clients are often asking for templates of loads for repeated functions they will have within EDM. This will allow for development of these loads within the EDM interface so it will be one less step for the client, and one less step for user error when loading repeated jobs in EDM. 
+
+ 
+
+Key Resources 
+
+Creating, Editing, Copying, and Deleting Loads in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+Extract Package Inspector Usability Enhancements 
+
+ 
+
+The extract package inspector has been enhanced to allow easier creation and modification of extract packages.  The following improvements were made: 
+
+Dropdown menu to add an extract is larger to display longer extract names 
+
+Multiple extracts can be added to the extract package at the same time 
+
+Search for extracts to be added to the extract package 
+
+Reorder extracts in the extract package using drag and drop 
+
+ 
+
+Business Benefit: Extract packages for applications which have a large number of extracts can be defined and edited in a more efficient manner. 
+
+ 
+
+Huron POV: The recent improvements to Extract Package Inspector make it easier to create and manage extract packages. With the ability to add multiple extracts at once, search for extracts, and reorder them using drag-and-drop, users can now handle large extract packages more efficiently, reducing setup time and improving flexibility. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Key Resources 
+
+Creating, Editing, Copying, and Deleting Extract Packages in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+ 
+
+EDM Administration UPDATES 
+
+Custom Validations on Previous Parent or Both Parents 
+
+Custom validations provide additional request validation scopes to control which nodes are evaluated during validation of a request item. Previous Parent scope validations evaluate the parent that a node was moved from.  Validations with the Both Parents scope evaluate the previous parent and current parent. Validations with parent scopes run only for changes made to hierarchy viewpoints.  When validating a viewpoint outside of a request context, parent scope validations run for every node in the viewpoint. 
+
+Business Benefit: Some validations require checking the previous parent that a node was moved from or both the current and previous parents.  For example, a validation which prevents limb nodes from not having any leaf nodes, or a validation that ensures a particular user group can move a node from one parent to another. 
+
+Huron POV: 
+
+This feature allows validations to be much more capable in validating movement actions within hierarchies. Previously, validations were only able to be applied against a node’s new parent and not it’s historic parent which made validating some move actions difficult. The most common example of this would be preventing a parent member from becoming a base member.  
+
+Key Resources 
+
+Working with Custom Validations in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+Delete Unused Workflow Policies 
+
+Workflow policies that were created but never used for any requests can be deleted by users who have the Owner or Metadata Manager permission.  Policies can be individually deleted from the Policies tab of the inspector for the application, dimension, node type, or hierarchy set for which the policy was defined. 
+
+Business Benefit: Deleting a policy enables unused polices to be permanently removed and prevents these policies from being migrated to a different environment. 
+
+Huron POV: This is a very useful enhancement for those who have unintentionally made policies that were not needed in final implementation. The caveat on this is that the policies may not have been used – so have not participated in a test or live. Prior to this, many policies were renamed to have a “Unused” prefix on the policy for documentation purposes. This practice should still be used for policies that did have some activity, but are no longer needed to support the workflow. 
+
+Key Resources 
+
+Deleting Policies in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+Prevent Pushback and Recall Actions for Selected Request Types 
+
+The Pushback and Recall workflow actions can be optionally restricted for submitters, approvers, and committers of certain types of requests.  A system setting is available to enable or disable this restriction and select the request types where these actions will be prevented.  In previous releases, only the Reject action could be restricted for In Flight requests. 
+
+Business Benefit: Restricting the Pushback and Recall actions avoids the unintended loss of request approvals or enrichment which may be cleared when a request is returned to the Submit stage. 
+
+Huron POV: This feature to restrict Pushback and Recall would be useful especially for any import/load process that triggers subscriptions and approvers and committers would have to act upon it. This is a system level setting and applies across all workflows. Pushback and Recall is a very useful features that allow users to collaborate/update on a request and disabling this feature at the system level has to be considered from user experience perspective. 
+
+ 
+
+Key Resources 
+
+Configuring System Settings in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+Uniqueness Constraints for Calculated Node Names 
+
+Calculated node names can be checked for uniqueness by a constraint defined for an application.  The Core.Name property is now available for selection in the constraint inspector for any type of constraint regardless of whether the Calculate and Store default type is configured at the application or node type level for that property. 
+
+Business Benefit: Constraints can be used to validate the uniqueness of both manually defined and calculated node names. 
+
+Huron POV: Unique node name constraint now can be applied irrespective even when the node name is calculated which was not available until this release. This feature is helpful especially when node name is calculated and have to be unique across a viewpoint. For example in mappings, where a name is derived from different source property values can help in validating and making unique mapping list and alert users when a duplicate map is entered. 
+
+Key Resources 
+
+Working with Constraints in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
+
+View Users of Invited Policy Groups in Request Inspector 
+
+The Workflow tab of the request inspector provides an option to view the users within a group that is invited to a particular request in the Approve or Commit stage. This option enables data managers and application owners to identify specific users who need to approve or commit the request. 
+
+Business Benefit: When reviewing a request that requires approvals or commits by a user group, the users within that group can be easily identified in case further action needs to be taken. 
+
+Huron POV: This is an excellent usability enhancement for those Data Managers or administrators that are helping move stagnant workflows along. When inspecting Requests, you can now go to the Workflow tab and see the users that are invited to do the next step of the workflow. Prior to this, the group name was visible, but not the users; it would require navigating to the Manage Groups screen to see the users in the group. 
+
+Key Resources 
+
+Inspecting Requests in Administering and Working with Oracle Enterprise Data Management Cloud 
+
+ 
